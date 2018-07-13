@@ -1,7 +1,6 @@
 <?php
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . './auth.php');
-
 ?>
 
 
@@ -181,168 +180,174 @@ include_once(dirname(__FILE__) . './auth.php');
                         <span>Dashboard</span>
                     </a>
                 </li>
-<!--                <li>
+                <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">supervisor_account</i>
-                        <span>Member</span>
+                        <span>Vehicle Type</span>
                     </a>
                     <ul class="ml-menu">
                         <li>
-                            <a href="create-member.php">
+                            <a href="create-vehicle-type.php">
                                 <i class="material-icons">add</i>
                                 <span>Add New</span>
                             </a>
                         </li>
                         <li>
-                            <a href="manage-member.php">
-                                <i class="material-icons">list</i>
-                                <span>Manage</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                 <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">contacts</i>
-                        <span>Company</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="create-company.php">
-                                <i class="material-icons">add</i>
-                                <span>Add New</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-company.php">
-                                <i class="material-icons">list</i>
-                                <span>Manage</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">message</i>
-                        <span>Message Request</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="manage-messages-member.php">
-                                <i class="material-icons">face</i>
-                                <span>Member</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-messages-company.php">
-                                <i class="material-icons">recent_actors</i>
-                                <span>Company</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-messages-vacancy.php">
-                                <i class="material-icons">next_week</i>
-                                <span>Vacancy</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">account_balance</i>
-                        <span>Category</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="create-industry.php">
-                                <i class="material-icons">add</i>
-                                <span>Add New</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-industry.php">
+                            <a href="manage-vehicle-type.php">
                                 <i class="material-icons">list</i>
                                 <span>Manage</span>
                             </a>
                         </li>
                         <li>
-                            <a href="arrange-industry.php">
+                            <a href="arrange-vehicle-type.php">
                                 <i class="material-icons">compare_arrows</i>
                                 <span>Arrange</span>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">location_on</i>
-                        <span>District</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="create-district.php">
-                                <i class="material-icons">add</i>
-                                <span>Add New</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-district.php">
-                                <i class="material-icons">list</i>
-                                <span>Manage</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">assistant</i>
-                        <span>Skill</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="manage-skills.php">
-                                <i class="material-icons">list</i>
-                                <span>Manage</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="all-skills.php">
-                                <i class="material-icons">compare_arrows</i>
-                                <span>Arrange</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>             -->
-                
-               
-                
-<!--                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">question_answer</i>
-                        <span>Feed Back</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="create-feedback.php">
-                                <i class="material-icons">add</i>
-                                <span>Add New</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-feedback.php">
-                                <i class="material-icons">list</i>
-                                <span>Manage</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="arrange-feedback.php">
-                                <i class="material-icons">compare_arrows</i>
-                                <span>Arrange</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>-->
+                            <li>
+                                    <a href="javascript:void(0);" class="menu-toggle">
+                                        <i class="material-icons">contacts</i>
+                                        <span>Vehicle</span>
+                                    </a>
+                                    <ul class="ml-menu">
+                                        <li>
+                                            <a href="create-vehicle.php">
+                                                <i class="material-icons">add</i>
+                                                <span>Add New</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="manage-vehicle.php">
+                                                <i class="material-icons">list</i>
+                                                <span>Manage</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                <!--                <li>
+                                    <a href="javascript:void(0);" class="menu-toggle">
+                                        <i class="material-icons">message</i>
+                                        <span>Message Request</span>
+                                    </a>
+                                    <ul class="ml-menu">
+                                        <li>
+                                            <a href="manage-messages-member.php">
+                                                <i class="material-icons">face</i>
+                                                <span>Member</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="manage-messages-company.php">
+                                                <i class="material-icons">recent_actors</i>
+                                                <span>Company</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="manage-messages-vacancy.php">
+                                                <i class="material-icons">next_week</i>
+                                                <span>Vacancy</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>-->
+                <!--                <li>
+                                    <a href="javascript:void(0);" class="menu-toggle">
+                                        <i class="material-icons">account_balance</i>
+                                        <span>Category</span>
+                                    </a>
+                                    <ul class="ml-menu">
+                                        <li>
+                                            <a href="create-industry.php">
+                                                <i class="material-icons">add</i>
+                                                <span>Add New</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="manage-industry.php">
+                                                <i class="material-icons">list</i>
+                                                <span>Manage</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="arrange-industry.php">
+                                                <i class="material-icons">compare_arrows</i>
+                                                <span>Arrange</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>-->
+                <!--                <li>
+                                    <a href="javascript:void(0);" class="menu-toggle">
+                                        <i class="material-icons">location_on</i>
+                                        <span>District</span>
+                                    </a>
+                                    <ul class="ml-menu">
+                                        <li>
+                                            <a href="create-district.php">
+                                                <i class="material-icons">add</i>
+                                                <span>Add New</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="manage-district.php">
+                                                <i class="material-icons">list</i>
+                                                <span>Manage</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>-->
+
+                <!--                <li>
+                                    <a href="javascript:void(0);" class="menu-toggle">
+                                        <i class="material-icons">assistant</i>
+                                        <span>Skill</span>
+                                    </a>
+                                    <ul class="ml-menu">
+                                        <li>
+                                            <a href="manage-skills.php">
+                                                <i class="material-icons">list</i>
+                                                <span>Manage</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="all-skills.php">
+                                                <i class="material-icons">compare_arrows</i>
+                                                <span>Arrange</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>             -->
+
+
+
+                <!--                <li>
+                                    <a href="javascript:void(0);" class="menu-toggle">
+                                        <i class="material-icons">question_answer</i>
+                                        <span>Feed Back</span>
+                                    </a>
+                                    <ul class="ml-menu">
+                                        <li>
+                                            <a href="create-feedback.php">
+                                                <i class="material-icons">add</i>
+                                                <span>Add New</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="manage-feedback.php">
+                                                <i class="material-icons">list</i>
+                                                <span>Manage</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="arrange-feedback.php">
+                                                <i class="material-icons">compare_arrows</i>
+                                                <span>Arrange</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>-->
             </ul>
         </div>
         <!-- #Menu -->
