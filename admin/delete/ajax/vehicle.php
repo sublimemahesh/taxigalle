@@ -5,9 +5,9 @@ include_once(dirname(__FILE__) . '/../../auth.php');
 
 
 if ($_POST['option'] == 'delete') {
-    $MESSAGEREQUEST = new MessageRequest($_POST['id']);
+    $VEHICLE = new Vehicle($_POST['id']);
 
-    $result = $MESSAGEREQUEST->delete();
+    $result = $VEHICLE->delete();
 
     if ($result) {
         $data = array("status" => TRUE);

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('.delete-industry').click(function () {
+    $('.delete-vehicle').click(function () {
 
         var id = $(this).attr("data-id");
 
@@ -14,7 +14,7 @@ $(document).ready(function () {
         }, function () {
 
             $.ajax({
-                url: "delete/ajax/industry.php",
+                url: "delete/ajax/vehicle.php",
                 type: "POST",
                 data: {id: id, option: 'delete'},
                 dataType: "JSON",
@@ -23,13 +23,14 @@ $(document).ready(function () {
 
                         swal({
                             title: "Deleted!",
-                            text: "Industry has been deleted.",
+                            text: "City has been deleted.",
                             type: 'success',
                             timer: 2000,
                             showConfirmButton: false
                         });
 
-                        $('#div_' + id).remove();
+                        $('#row_' + id).remove();
+
                     }
                 }
             });

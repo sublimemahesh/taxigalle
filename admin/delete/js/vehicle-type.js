@@ -1,9 +1,8 @@
 $(document).ready(function () {
-
-    $('.delete-portfolio').click(function () {
+    $('.delete-vehicle-type').click(function () {
 
         var id = $(this).attr("data-id");
-        
+
         swal({
             title: "Are you sure?",
             text: "You will not be able to recover!",
@@ -15,7 +14,7 @@ $(document).ready(function () {
         }, function () {
 
             $.ajax({
-                url: "delete/ajax/portfolio.php",
+                url: "delete/ajax/vehicle-type.php",
                 type: "POST",
                 data: {id: id, option: 'delete'},
                 dataType: "JSON",
@@ -24,13 +23,14 @@ $(document).ready(function () {
 
                         swal({
                             title: "Deleted!",
-                            text: "Portfolio has been deleted.",
+                            text: "City has been deleted.",
                             type: 'success',
                             timer: 2000,
                             showConfirmButton: false
                         });
 
-                        $('#div_' + id).remove();
+                        $('#row_' + id).remove();
+
                     }
                 }
             });
