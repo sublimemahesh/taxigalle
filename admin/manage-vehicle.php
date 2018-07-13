@@ -75,7 +75,7 @@ $VEHICLE = new Vehicle(NULL)
                                                     <td><?php echo $vehicle['id']; ?></td> 
                                                     <?php
                                                     $vehicle_types = new Vehicle_type($vehicle['type']);
-                                                    $vehicle_type =$vehicle_types->name;
+                                                    $vehicle_type = $vehicle_types->name;
                                                     ?>
                                                     <td><?php echo $vehicle_type ?></td> 
                                                     <td><?php echo $vehicle['model_and_brand'] ?></td> 
@@ -83,6 +83,7 @@ $VEHICLE = new Vehicle(NULL)
 
                                                     <td> 
                                                         <a href="edit-vehicle.php?id=<?php echo $vehicle['id']; ?>" class="op-link btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+                                                        <a href="create-vehicle-photos.php?id=<?php echo $vehicle['id']; ?>">  <button class="glyphicon glyphicon-picture arrange-btn"></button></a>
 
                                                         <a href="#" class="delete-vehicle btn btn-sm btn-danger" data-id="<?php echo $vehicle['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
