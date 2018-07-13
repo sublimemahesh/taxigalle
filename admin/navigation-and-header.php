@@ -182,7 +182,7 @@ include_once(dirname(__FILE__) . './auth.php');
                 </li>
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">supervisor_account</i>
+                        <i class="material-icons">directions_car    </i>
                         <span>Vehicle Type</span>
                     </a>
                     <ul class="ml-menu">
@@ -206,26 +206,26 @@ include_once(dirname(__FILE__) . './auth.php');
                         </li>
                     </ul>
                 </li>
-                            <li>
-                                    <a href="javascript:void(0);" class="menu-toggle">
-                                        <i class="material-icons">contacts</i>
-                                        <span>Vehicle</span>
-                                    </a>
-                                    <ul class="ml-menu">
-                                        <li>
-                                            <a href="create-vehicle.php">
-                                                <i class="material-icons">add</i>
-                                                <span>Add New</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="manage-vehicle.php">
-                                                <i class="material-icons">list</i>
-                                                <span>Manage</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">airport_shuttle</i>
+                        <span>Vehicle</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-vehicle.php">
+                                <i class="material-icons">add</i>
+                                <span>Add New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-vehicle.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <!--                <li>
                                     <a href="javascript:void(0);" class="menu-toggle">
                                         <i class="material-icons">message</i>
