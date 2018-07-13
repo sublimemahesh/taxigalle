@@ -77,13 +77,13 @@ include_once(dirname(__FILE__) . './auth.php');
                             <!--vehicle Model_and_Brand-->
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                    <label for="name">Model_and_Brand</label>
+                                    <label for="model_and_brand">Model And Brand</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <label for="model_and_brand" class="hidden-lg hidden-md">Model_and_Brand</label>
-                                            <input type="text" id="model_and_brand" class="form-control" placeholder="Enter Model_and_Brand " autocomplete="off" name="model_and_brand">
+                                            <label for="model_and_brand" class="hidden-lg hidden-md">Model And Brand</label>
+                                            <input type="text" id="model_and_brand" class="form-control" placeholder="Enter Model And Brand " autocomplete="off" name="model_and_brand">
                                         </div>
                                     </div>
                                 </div>
@@ -91,13 +91,13 @@ include_once(dirname(__FILE__) . './auth.php');
                             <!--Reg_number-->
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                    <label for="Reg_number">Reg_number</label>
+                                    <label for="reg_number">Reg Number</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <label for="Reg_number" class="hidden-lg hidden-md">Reg_number</label>
-                                            <input type="text" id="model_and_brand" class="form-control" placeholder="Enter Reg_number" autocomplete="off" name="reg_number">
+                                            <label for="reg_number" class="hidden-lg hidden-md">Reg Number</label>
+                                            <input type="text" id="reg_number" class="form-control" placeholder="Enter Reg Number" autocomplete="off" name="reg_number">
                                         </div>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@ include_once(dirname(__FILE__) . './auth.php');
                                     <div class="form-group">
                                         <div class="form-line">
                                             <label for="email" class="hidden-lg hidden-md">Email</label>
-                                            <input type="email" id="email" class="form-control" placeholder="Enter email" autocomplete="off" name="email">
+                                            <input type="email" id="email" class="form-control" placeholder="Enter Email" autocomplete="off" name="email">
                                         </div>
                                     </div>
                                 </div>
@@ -125,38 +125,80 @@ include_once(dirname(__FILE__) . './auth.php');
                                     <div class="form-group">
                                         <div class="form-line">
                                             <label for="contact_number" class="hidden-lg hidden-md">Contact Number</label>
-                                            <input type="text" id="email" class="form-control" placeholder="Enter contact_number" autocomplete="off" name="contact_number">
+                                            <input type="text" id="contact_number" class="form-control" placeholder="Enter Contact Number" autocomplete="off" name="contact_number">
                                         </div>
                                     </div>
                                 </div>
                             </div> 
-                           
+                            <!--district-->
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                    <label for="district">District</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <label for="district" class="hidden-lg hidden-md">District</label>
+
+                                            <select class="form-control" autocomplete="off" name="district" id="district" >
+                                                <option value="<?php $VEHICLE->city ?>"> -- Please Select Your District -- </option>
+                                                <?php foreach (District::all() as $key => $district) {
+                                                    ?>
+                                                    <option value="<?php echo $district['id'] ?>"> <?php echo $district['name'] ?>                                        
+                                                    </option>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--City-->
+
+                            </div> 
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                    <label for="city-bar">City</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <label for="city-bar" class="hidden-lg hidden-md">City</label>
+
+                                            <select class="form-control" autocomplete="off"  id="city-bar" autocomplete="off" name="city" required="TRUE">
+                                                <option value=""> -- Please Select a District First -- </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--City-->
+
+                            </div> 
+
                             <!--Profile Picture-->
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                    <label for="Vehicle Image">Vehicle Image</label>
+                                    <label for="Vehicle_Image">Vehicle Image</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <label for="Vehicle Image" class="hidden-lg hidden-md">Vehicle Image</label>
-                                            <input type="file" id="image" class="form-control" name="image" >
+                                            <label for="Vehicle_Image Image" class="hidden-lg hidden-md">Vehicle Image</label>
+                                            <input type="file" id="Vehicle_Image" class="form-control" name="image" >
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!--Rank-->
+                            <!--Profile Picture -->
 
-                            <!--Add member-->
+                            <!--Add Vehicle-->
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5">  
 
                                 </div>  
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <input type="hidden" name="type" value="<?php echo $vehicle_type['id'] ?>"/>
-                                    <button class="btn btn-primary m-t-15 waves-effect  pull-left" type="submit" name="add-vehicle">Add vehicle</button>
-
-
+                                    <button class="btn btn-primary m-t-15 waves-effect  pull-left" type="submit" name="add-vehicle">Add Vehicle</button>
                                     <div class=" text-danger btn-padding pull-left error-mess" id="message" ></div> 
                                 </div>
                             </div> 
@@ -175,6 +217,7 @@ include_once(dirname(__FILE__) . './auth.php');
         <script src="js/admin.js"></script>
         <script src="js/demo.js"></script>
         <script src="tinymce/js/tinymce/tinymce.min.js"></script>
+        <script src="js/city.js" type="text/javascript"></script>
 
 
         <script>

@@ -13,7 +13,7 @@ $VEHICLE = new Vehicle($id);
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Edit City || Admin || Support Lanka</title>
+        <title>Edit vehicle || Admin || Taxi galle</title>
 
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -59,7 +59,6 @@ $VEHICLE = new Vehicle($id);
                             <div class="body row">
                                 <form class="form-horizontal col-sm-9 col-md-12" method="post" action="post-and-get/vehicle.php" enctype="multipart/form-data"> 
 
-
                                     <!--vehicle name-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
@@ -81,12 +80,12 @@ $VEHICLE = new Vehicle($id);
                                     <!--Model_and_Brand-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="Model_and_Brand">Model_and_Brand</label>
+                                            <label for="Model_and_Brand">Model And Brand</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <label for="Model_and_Brand" class="hidden-lg hidden-md">Model_and_Brand</label>
+                                                    <label for="Model_and_Brand" class="hidden-lg hidden-md">Model And Brand</label>
                                                     <input type="text" id="type" class="form-control" placeholder="Enter Model_and_Brand" autocomplete="off" name="model_and_brand" value="<?php echo $VEHICLE->model_and_brand; ?>" >
                                                 </div>
                                             </div>
