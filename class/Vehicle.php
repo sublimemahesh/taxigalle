@@ -19,12 +19,13 @@ class Vehicle {
     public $reg_number;
     public $email;
     public $contact_number;
+    public $city;
     public $image_name;
 
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`type`,`model_and_brand`,`reg_number`,`email`,`contact_number`,`image_name` FROM `vehicle` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`type`,`model_and_brand`,`reg_number`,`email`,`contact_number`,`city`,`image_name` FROM `vehicle` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -36,6 +37,7 @@ class Vehicle {
             $this->reg_number = $result['reg_number'];
             $this->email = $result['email'];
             $this->contact_number = $result['contact_number'];
+            $this->city = $result['city'];
             $this->image_name = $result['image_name'];
 
             return $this;
@@ -44,12 +46,13 @@ class Vehicle {
 
     public function create() {
 
-        $query = "INSERT INTO `vehicle` (`type`,`model_and_brand`,`reg_number`,`email`,`contact_number`,`image_name`) VALUES  ('"
+        $query = "INSERT INTO `vehicle` (`type`,`model_and_brand`,`reg_number`,`email`,`contact_number`,`city`,`image_name`) VALUES  ('"
                 . $this->type . "','"
                 . $this->model_and_brand . "','"
                 . $this->reg_number . "','"
                 . $this->email . "','"
                 . $this->contact_number . "','"
+                . $this->city . "','"
                 . $this->image_name . "')";
 
         $db = new Database();
@@ -87,6 +90,7 @@ class Vehicle {
                 . "`reg_number` ='" . $this->reg_number . "', "
                 . "`email` ='" . $this->email . "', "
                 . "`contact_number` ='" . $this->contact_number . "', "
+                . "`city` ='" . $this->city . "', "
                 . "`image_name` ='" . $this->image_name . "' "
                 . "WHERE `id` = '" . $this->id . "'";
 

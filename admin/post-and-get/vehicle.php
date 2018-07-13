@@ -15,6 +15,7 @@ if (isset($_POST['add-vehicle'])) {
     $VEHICLE->reg_number = $_POST['reg_number'];
     $VEHICLE->email = $_POST['email'];
     $VEHICLE->contact_number = $_POST['contact_number'];
+    $VEHICLE->city = $_POST['city'];
 
 
     $dir_dest = '../../upload/vehicle/';
@@ -101,6 +102,7 @@ if (isset($_POST['edit-vehicle'])) {
         $VEHICLE->email = $_POST['email'];
         $VEHICLE->model_and_brand = $_POST['model_and_brand'];
         $VEHICLE->reg_number = $_POST['reg_number'];
+        $VEHICLE->city = $_POST['city'];
         $VEHICLE->image_name = $_POST['oldImageName'];
        
 
