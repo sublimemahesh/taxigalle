@@ -1,0 +1,5 @@
+[30-Aug-2018 02:41:20 America/New_York] PHP Notice:  Undefined index: username in /home/gallnwxt/sites/taxigalle/kuncoro_login/login.php on line 7
+[30-Aug-2018 02:41:20 America/New_York] PHP Notice:  Undefined index: password in /home/gallnwxt/sites/taxigalle/kuncoro_login/login.php on line 8
+[30-Aug-2018 02:41:25 America/New_York] PHP Notice:  Undefined index: username in /home/gallnwxt/sites/taxigalle/kuncoro_login/register.php on line 7
+[30-Aug-2018 02:41:25 America/New_York] PHP Notice:  Undefined index: password in /home/gallnwxt/sites/taxigalle/kuncoro_login/register.php on line 8
+[30-Aug-2018 02:41:25 America/New_York] PHP Notice:  Undefined index: confirm_password in /home/gallnwxt/sites/taxigalle/kuncoro_login/register.php on line 9
