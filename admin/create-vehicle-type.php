@@ -9,7 +9,7 @@ include_once(dirname(__FILE__) . './auth.php');
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-        <title>Add New Member || Admin || Support Lanka</title>
+        <title>Add Vehicle Type|| Admin || Taxi Galle</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -38,10 +38,10 @@ include_once(dirname(__FILE__) . './auth.php');
                 <!-- Vertical Layout -->
                 <div class="card">
                     <div class="header">
-                        <h2>Add New Member</h2>
+                        <h2>Add New Vehicle Type</h2>
                         <ul class="header-dropdown">
                             <li class="">
-                                <a href="create-vehicle.php">
+                                <a href="manage-vehicle-type.php">
                                     <i class="material-icons">list</i> 
                                 </a>
                             </li>
@@ -49,29 +49,89 @@ include_once(dirname(__FILE__) . './auth.php');
                     </div>
                     <div class="body">
                         <form class="" action="post-and-get/vehicle-type.php" method="post"  enctype="multipart/form-data"> 
-                            <!--name-->
+
+                            <!--vehicle_type-->
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                    <label for="name">Vehicle Type</label>
+                                    <label for="vehicle_type">Vehicle Type</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <label for="name" class="hidden-lg hidden-md">Vehicle Type</label>
-                                            <input type="text" id="name" class="form-control" placeholder="Enter Vehicle Type" autocomplete="off" name="name">
+                                            <label for="vehicle_type" class="hidden-lg hidden-md">Vehicle Type</label>
+                                            <input type="text" id="vehicle_type" class="form-control" placeholder="Enter Vehicle Type" autocomplete="off" name="name">
                                         </div>
                                     </div>
                                 </div>
                             </div> 
 
-                           
-                            <!--Add member-->
+                            <!--base-->
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                    <label for="base">Base</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <label for="base" class="hidden-lg hidden-md">Base</label>
+                                            <input type="text" id="base" class="form-control" placeholder="Enter Base" autocomplete="off" name="base">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <!--Unit-->
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                    <label for="unit">Unit</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <label for="unit" class="hidden-lg hidden-md">Unit</label>
+                                            <input type="text" id="unit" class="form-control" placeholder="Enter Unit" autocomplete="off" name="unit">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <!--Add Vehicle Type Photo-->
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                    <label for="vehicle_type_photo">Vehicle Type Photo</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <label for="vehicle_type_photo" class="hidden-lg hidden-md">Vehicle Type Photo</label>
+                                            <input type="file" id="vehicle_type_photo" class="form-control" placeholder="Enter Vehicle Type Photo" autocomplete="off" name="image_name">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--passengers-->
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                    <label for="passengers">Passengers</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <label for="passengers" class="hidden-lg hidden-md">Passengers</label>
+                                            <input type="text" id="passengers" class="form-control" placeholder="Enter Passengers" autocomplete="off" name="passengers">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+
+                            
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5">  
 
                                 </div>  
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                  
+
                                     <button class="btn btn-primary m-t-15 waves-effect  pull-left" type="submit" name="add-vehicle">Create</button>
 
                                     <input type="hidden" name="add-vehicle" value="add-vehicle"/>

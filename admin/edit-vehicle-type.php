@@ -7,14 +7,13 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 }
 $VEHICLE_TYPE = new Vehicle_type($id);
-
 ?> 
 ﻿<!DOCTYPE html>
 <html> 
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Edit City || Admin || Support Lanka</title>
+        <title>Edit Vehicle Type || Admin || Taxi Galle</title>
 
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -59,17 +58,78 @@ $VEHICLE_TYPE = new Vehicle_type($id);
                             </div>
                             <div class="body row">
                                 <form class="form-horizontal col-sm-9 col-md-12" method="post" action="post-and-get/vehicle-type.php" enctype="multipart/form-data"> 
-                                    
 
+                                    <!--Vehicle Type-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                            <label for="name">Vehicle Name</label>
+                                            <label for="name">Vehicle Type</label>
                                         </div>
                                         <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 <div class="form-line">
-                                                    <label for="name" class="hidden-lg hidden-md">Vehicle Name</label>
-                                                    <input type="text" id="name" class="form-control" placeholder="Enter Vehicle Name" autocomplete="off" name="name" value="<?php echo $VEHICLE_TYPE->name; ?>" >
+                                                    <label for="name" class="hidden-lg hidden-md">Vehicle Type</label>
+                                                    <input type="text" id="name" class="form-control" placeholder="Enter Vehicle Type" autocomplete="off" name="name" value="<?php echo $VEHICLE_TYPE->name; ?>" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Base-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="base">Base</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="base" class="hidden-lg hidden-md">Base</label>
+                                                    <input type="text" id="base" class="form-control" autocomplete="off" name="base" value="<?php echo $VEHICLE_TYPE->base; ?>" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Unit-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="unit">Unit</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="unit" class="hidden-lg hidden-md">Unit</label>
+                                                    <input type="text" id="base" class="form-control" autocomplete="off" name="unit" value="<?php echo $VEHICLE_TYPE->unit; ?>" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!--Passengers-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="passengers">Passengers</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="passengers" class="hidden-lg hidden-md">Passengers</label>
+                                                    <input type="text" id="passengers" class="form-control" autocomplete="off" name="passengers" value="<?php echo $VEHICLE_TYPE->passengers; ?>" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Vehicle Image-->
+                                    <div class="row clearfix">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="vehicle_image">Vehicle Image</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="vehicle_image" class="hidden-lg hidden-md">Vehicle Image</label>
+                                                    <input type="file" id="vehicle_image" class="form-control" autocomplete="off" name="image_name" >
+                                                    <img  src="../upload/vehicle-type/<?php echo $VEHICLE_TYPE->image ?>"  name="image_name">
                                                 </div>
                                             </div>
                                         </div>
@@ -78,8 +138,8 @@ $VEHICLE_TYPE = new Vehicle_type($id);
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-4">
                                             <input type="hidden" id="id" value="<?php echo $VEHICLE_TYPE->id; ?>" name="id"/>
-
-                                            <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="edit-vehicle-type" value="submit">Save Changes</button>
+                                            <input type="hidden" id="image" value="<?php echo $VEHICLE_TYPE->image; ?>" name="oldImageName"/>                                            
+                                            <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="update" value="submit">Save Changes</button>
                                         </div>
                                     </div>
                                 </form>
