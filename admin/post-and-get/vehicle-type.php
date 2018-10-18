@@ -11,9 +11,36 @@ if (isset($_POST['add-vehicle'])) {
 
 
     $VEHICLE_TYPE->name = $_POST['name'];
+    $VEHICLE_TYPE->base = $_POST['base'];
+    $VEHICLE_TYPE->unit = $_POST['unit'];
+    $VEHICLE_TYPE->passengers = $_POST['passengers'];
+
+    $dir_dest = '../../upload/vehicle-type/';
+
+    $handle = new Upload($_FILES['image_name']);
+
+    $imgName = null;
+
+    if ($handle->uploaded) {
+        $handle->image_resize = true;
+        $handle->file_new_name_ext = 'jpg';
+        $handle->image_ratio_crop = 'C';
+        $handle->file_new_name_body = Helper::randamId();
+        $handle->image_x = 300;
+        $handle->image_y = 175;
+
+        $handle->Process($dir_dest);
+
+        if ($handle->processed) {
+            $info = getimagesize($handle->file_dst_pathname);
+            $imgName = $handle->file_dst_name;
+        }
+    }
+    $VEHICLE_TYPE->image = $imgName;
 
     $VALID->check($VEHICLE_TYPE, [
         'name' => ['required' => TRUE],
+        'image' => ['required' => TRUE],
     ]);
 
     if ($VALID->passed()) {
@@ -37,12 +64,43 @@ if (isset($_POST['add-vehicle'])) {
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
-if (isset($_POST['edit-vehicle-type'])) {
-  
+if (isset($_POST['update'])) {
+
+    $dir_dest = '../../upload/vehicle-type/';
+
+    $handle = new Upload($_FILES['image_name']);
+   
+    $imgName = null;
+
+
+    if ($handle->uploaded) {
+        $handle->image_resize = true;
+        $handle->file_new_name_body = TRUE;
+        $handle->file_overwrite = TRUE;
+        $handle->file_new_name_ext = FALSE;
+        $handle->image_ratio_crop = 'C';
+        $handle->file_new_name_body = $_POST ["oldImageName"];
+        $handle->image_x = 300;
+        $handle->image_y = 175;
+
+        $handle->Process($dir_dest);
+
+        if ($handle->processed) {
+
+            $info = getimagesize($handle->file_dst_pathname);
+
+            $imgName = $handle->file_dst_name;
+        }
+    }
+
+
     $VEHICLE_TYPE = New Vehicle_type($_POST['id']);
     $VALID = new Validator();
 
     $VEHICLE_TYPE->name = $_POST['name'];
+    $VEHICLE_TYPE->base = $_POST['base'];
+    $VEHICLE_TYPE->unit = $_POST['unit'];
+    $VEHICLE_TYPE->passengers = $_POST['passengers'];
 
     $VALID->check($VEHICLE_TYPE, [
         'name' => ['required' => TRUE],

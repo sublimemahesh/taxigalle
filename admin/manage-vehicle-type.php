@@ -10,7 +10,7 @@ $VEHICLE_TYPE = new Vehicle_type(NULL)
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Manage vehicle || Admin || Support Lanka</title>
+        <title>Manage vehicle || Admin || Taxi Galle</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -62,6 +62,9 @@ $VEHICLE_TYPE = new Vehicle_type(NULL)
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Vehicle Type</th> 
+                                                <th>Base</th> 
+                                                <th>Unit</th> 
+                                                <th>Passengers</th> 
 
                                                 <th>Options</th>
                                             </tr>
@@ -73,6 +76,9 @@ $VEHICLE_TYPE = new Vehicle_type(NULL)
                                                 <tr id="row_<?php echo $vehicle_type['id']; ?>">
                                                     <td><?php echo $vehicle_type['id']; ?></td> 
                                                     <td><?php echo $vehicle_type['name'] ?></td> 
+                                                    <td><?php echo $vehicle_type['base'] ?></td> 
+                                                    <td><?php echo $vehicle_type['unit'] ?></td> 
+                                                    <td><?php echo $vehicle_type['passengers'] ?></td> 
 
                                                     <td> 
                                                         <a href="edit-vehicle-type.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
@@ -90,6 +96,10 @@ $VEHICLE_TYPE = new Vehicle_type(NULL)
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Vehicle Type</th> 
+                                                <th>Base</th> 
+                                                <th>Unit</th> 
+                                                <th>Passengers</th> 
+
                                                 <th>Options</th>
                                             </tr>
                                         </tfoot>
@@ -125,9 +135,9 @@ $VEHICLE_TYPE = new Vehicle_type(NULL)
     <script src="js/pages/tables/jquery-datatable.js"></script>
     <script src="js/demo.js"></script>
     <script src="delete/js/vehicle-type.js" type="text/javascript"></script>
-    
-    
-    
+
+
+
 </body>
 
 </html> 

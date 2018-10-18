@@ -8,16 +8,16 @@
  * */
 class Database {
 
-    private $host = 'localhost';
-    private $name = 'gallnwxt_galletaxi';
-    private $user = 'gallnwxt_galletaxi';
-    private $password = 'gallnwxt_galletaxi@321';
+//    private $host = 'localhost';
+//    private $name = 'gallnwxt_galletaxi';
+//    private $user = 'gallnwxt_galletaxi';
+//    private $password = 'gallnwxt_galletaxi@321';
     
   
-//    private $host = 'localhost';
-//    private $name = 'taxi_galle';
-//    private $user = 'root';
-//    private $password = '';
+    private $host = 'localhost';
+    private $name = 'taxi_galle';
+    private $user = 'root';
+    private $password = '';
 
     public function __construct() {
         mysql_connect($this->host, $this->user, $this->password) or die("Invalid host  or user details");
