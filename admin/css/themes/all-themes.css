@@ -898,3 +898,6 @@
   .theme-black .sidebar .legal .copyright a {
     color: #000 !important; }
 
+  .padd{
+       margin-top: 2px;   
+  }

@@ -183,6 +183,21 @@ include_once(dirname(__FILE__) . './auth.php');
                 
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">date_range</i>
+                        <span>Booking</span>
+                    </a>
+                    <ul class="ml-menu">
+                      
+                        <li>
+                            <a href="manage-booking.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">airport_shuttle</i>
                         <span>Vehicle</span>
                     </a>
