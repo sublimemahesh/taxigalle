@@ -22,6 +22,7 @@ $USER = new User($id);
         <link href="plugins/animate-css/animate.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
     </head>
 
     <body class="theme-red">
@@ -153,7 +154,9 @@ $USER = new User($id);
         <script src="js/admin.js"></script>
 
         <!-- Demo Js -->
-        <script src="js/demo.js"></script>
+        <script src="js/demo.js"></script>  
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
     </body>
 
 </html>

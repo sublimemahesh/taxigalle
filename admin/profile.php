@@ -22,6 +22,7 @@ $USER = new User($id);
         <link href="plugins/animate-css/animate.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />  
     </head>
 
     <body class="theme-red">
@@ -89,7 +90,9 @@ $USER = new User($id);
         <script src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
         <script src="plugins/node-waves/waves.js"></script>
         <script src="js/admin.js"></script>
-        <script src="js/demo.js"></script>
+        <script src="js/demo.js"></script> 
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
     </body>
 
 </html>

@@ -28,6 +28,8 @@ $VEHICLE = new VehiclePhotos($id)
         <link href="css/themes/all-themes.css" rel="stylesheet" />
         <!-- Bootstrap Spinner Css -->
         <link href="plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
+
     </head>
 
     <body class="theme-red">
@@ -175,6 +177,8 @@ $VEHICLE = new VehiclePhotos($id)
 
             });
         </script>
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
     </body>
 
 </html>

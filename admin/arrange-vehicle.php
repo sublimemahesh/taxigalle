@@ -36,6 +36,7 @@ $VEHICLE = Vehicle::all();
 
         <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
     </head>
 
     <body class="theme-red">
@@ -145,6 +146,9 @@ $VEHICLE = Vehicle::all();
                 $("#sortable").disableSelection();
             });
         </script>
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
+        
     </body>
 
 </html>

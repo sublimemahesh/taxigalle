@@ -24,6 +24,7 @@ $VEHICLE = new Vehicle(NULL)
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />  
     </head>
 
     <body class="theme-red">
@@ -80,13 +81,13 @@ $VEHICLE = new Vehicle(NULL)
                                                     ?>
                                                     <td><?php echo $vehicle_type ?></td> 
                                                     <td><?php echo $vehicle['model_and_brand'] ?></td>  
-                                                    
+
                                                     <?php
                                                     $city = new City($vehicle['city']);
                                                     $cityName = $city->name;
                                                     ?>
                                                     <td><?php echo $cityName ?></td> 
-                                                    
+
                                                     <td><?php echo $vehicle['contact_number'] ?></td> 
 
                                                     <td> 
@@ -143,10 +144,9 @@ $VEHICLE = new Vehicle(NULL)
     <script src="js/admin.js"></script>
     <script src="js/pages/tables/jquery-datatable.js"></script>
     <script src="js/demo.js"></script>
-    <script src="delete/js/vehicle.js" type="text/javascript"></script>
-
-
-
+    <script src="delete/js/vehicle.js" type="text/javascript"></script> 
+    <script src="plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
 </body>
 
 </html> 

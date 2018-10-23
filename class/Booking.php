@@ -109,4 +109,16 @@ class Booking {
         return $db->readQuery($query);
     }
 
+    public function GetNewBookings() {
+
+        $query = "SELECT * FROM `booking` WHERE `is_approved` = '0' ORDER BY `booked_date_time` DESC";
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+        return $array_res;
+    }
+
 }

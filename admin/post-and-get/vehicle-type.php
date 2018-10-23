@@ -3,7 +3,6 @@
 include_once(dirname(__FILE__) . '/../../class/include.php');
 include_once(dirname(__FILE__) . '/../auth.php');
 
-
 if (isset($_POST['add-vehicle'])) {
 
     $VEHICLE_TYPE = New Vehicle_type(NULL);
@@ -14,6 +13,10 @@ if (isset($_POST['add-vehicle'])) {
     $VEHICLE_TYPE->base = $_POST['base'];
     $VEHICLE_TYPE->unit = $_POST['unit'];
     $VEHICLE_TYPE->passengers = $_POST['passengers'];
+
+    $server_name = "http://" . $_SERVER['SERVER_NAME'];
+
+    $dir_dest_url = $server_name . '/upload/vehicle-type/';
 
     $dir_dest = '../../upload/vehicle-type/';
 
@@ -36,7 +39,8 @@ if (isset($_POST['add-vehicle'])) {
             $imgName = $handle->file_dst_name;
         }
     }
-    $VEHICLE_TYPE->image = $imgName;
+
+    $VEHICLE_TYPE->image = $dir_dest_url . $imgName;
 
     $VALID->check($VEHICLE_TYPE, [
         'name' => ['required' => TRUE],
@@ -64,12 +68,24 @@ if (isset($_POST['add-vehicle'])) {
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
+
 if (isset($_POST['update'])) {
+
+    $img = $_POST ["oldImageName"];
+
+    $OLD_IMAGE = (explode("/", $img)[5]);
+
+    $unlink('../../upload/vehicle-type/' . $OLD_IMAGE); // correct
+
+    $server_name = "http://" . $_SERVER['SERVER_NAME'];
+
+    $dir_dest_url = $server_name . '/upload/vehicle-type/';
 
     $dir_dest = '../../upload/vehicle-type/';
 
     $handle = new Upload($_FILES['image_name']);
-   
+
+
     $imgName = null;
 
 
@@ -77,9 +93,9 @@ if (isset($_POST['update'])) {
         $handle->image_resize = true;
         $handle->file_new_name_body = TRUE;
         $handle->file_overwrite = TRUE;
-        $handle->file_new_name_ext = FALSE;
+        $handle->file_new_name_ext = 'jpg';
         $handle->image_ratio_crop = 'C';
-        $handle->file_new_name_body = $_POST ["oldImageName"];
+        $handle->file_new_name_body = Helper::randamId();
         $handle->image_x = 250;
         $handle->image_y = 250;
 
@@ -101,6 +117,8 @@ if (isset($_POST['update'])) {
     $VEHICLE_TYPE->base = $_POST['base'];
     $VEHICLE_TYPE->unit = $_POST['unit'];
     $VEHICLE_TYPE->passengers = $_POST['passengers'];
+
+    $VEHICLE_TYPE->image = $dir_dest_url . $imgName;
 
     $VALID->check($VEHICLE_TYPE, [
         'name' => ['required' => TRUE],

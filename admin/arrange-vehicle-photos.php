@@ -138,7 +138,7 @@ $VEHICLE_PHOTO = VehiclePhotos::all();
                 relative_urls: false
             });
         </script>
-
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
         <script>
             $(function () {
                 $("#sortable").sortable();
