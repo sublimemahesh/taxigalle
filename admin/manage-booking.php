@@ -24,6 +24,7 @@ $BOOKING = new Booking(NULL)
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />  
     </head>
 
     <body class="theme-red">
@@ -189,7 +190,9 @@ $BOOKING = new Booking(NULL)
     <script src="js/admin.js"></script>
     <script src="js/pages/tables/jquery-datatable.js"></script>
     <script src="js/demo.js"></script>
-    <script src="delete/js/vehicle.js" type="text/javascript"></script>
+    <script src="delete/js/vehicle.js" type="text/javascript"></script> 
+    <script src="plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
 
 
 

@@ -25,6 +25,7 @@ $VEHICLE = new Vehicle($id);
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
     </head>
 
     <body class="theme-red">
@@ -69,10 +70,10 @@ $VEHICLE = new Vehicle($id);
                                                 <div class="form-line">
                                                     <label for="Vehicle Type" class="hidden-lg hidden-md">Vehicle Type</label>
                                                     <?php
-                                                    $VEHICLE_TYPES= new Vehicle_type($VEHICLE->type);
-                                                        $VEHICLE_NAME    = $VEHICLE_TYPES->name;                                                            
+                                                    $VEHICLE_TYPES = new Vehicle_type($VEHICLE->type);
+                                                    $VEHICLE_NAME = $VEHICLE_TYPES->name;
                                                     ?>
-                                                    <input type="text" id="type" class="form-control" placeholder="Enter Vehicle Name" autocomplete="off" name="type" value="<?php echo $VEHICLE_NAME;?>" disabled="true">
+                                                    <input type="text" id="type" class="form-control" placeholder="Enter Vehicle Name" autocomplete="off" name="type" value="<?php echo $VEHICLE_NAME; ?>" disabled="true">
                                                 </div>
                                             </div>
                                         </div>
@@ -142,8 +143,9 @@ $VEHICLE = new Vehicle($id);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="Vehicle Image" class="hidden-lg hidden-md">Vehicle Image</label>
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
                                                     <input type="file" id="file" class="form-control" placeholder="Enter Contact Number" autocomplete="off" name="image_name" value="<?php echo $VEHICLE->image_name; ?>" >
-                                                    <img src="../upload/vehicle/<?php echo $VEHICLE->image_name?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
+                                                    <img src="../upload/vehicle/<?php echo $VEHICLE->image_name ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
 
                                                 </div>
                                             </div>
@@ -176,7 +178,9 @@ $VEHICLE = new Vehicle($id);
         <script src="js/admin.js"></script>
         <script src="js/demo.js"></script>
         <script src="js/add-new-ad.js" type="text/javascript"></script>
-
+      
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
     </body>
 
 </html>

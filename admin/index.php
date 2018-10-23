@@ -29,6 +29,7 @@ include_once(dirname(__FILE__) . '/auth.php');
         <link href="plugins/morrisjs/morris.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
     </head>
     <style>
         .list-group a:hover{
@@ -504,8 +505,10 @@ include_once(dirname(__FILE__) . '/auth.php');
         <script src="js/admin.js"></script>
         <script src="js/pages/index.js"></script>
 
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
         <!-- Demo Js -->
         <script src="js/demo.js"></script>
+        <script src="js/ajax/booking-indicator.js"></script>
     </body>
 
 </html>

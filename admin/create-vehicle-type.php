@@ -22,6 +22,7 @@ include_once(dirname(__FILE__) . './auth.php');
         <link href="css/themes/all-themes.css" rel="stylesheet" />
         <!-- Bootstrap Spinner Css -->
         <link href="plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
     </head>
 
     <body class="theme-red">
@@ -125,7 +126,7 @@ include_once(dirname(__FILE__) . './auth.php');
                                 </div>
                             </div> 
 
-                            
+
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5">  
 
@@ -180,6 +181,8 @@ include_once(dirname(__FILE__) . './auth.php');
 
             });
         </script>
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
     </body>
 
 </html>

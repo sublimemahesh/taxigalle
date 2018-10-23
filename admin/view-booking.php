@@ -25,6 +25,7 @@ $BOOKING = new Booking($id);
         <link href="css/themes/all-themes.css" rel="stylesheet" />
         <!-- Bootstrap Spinner Css -->
         <link href="plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
     </head>
 
     <body class="theme-red">
@@ -181,9 +182,9 @@ $BOOKING = new Booking($id);
                                                     if ($BOOKING->is_approved == 0) {
                                                         echo "<p style='color:blue;'>" . 'Pending' . "</p>";
                                                     } elseif ($BOOKING->is_approved == 1) {
-                                                      echo "<p style='color:green;'>" . 'Approved' . "</p>";
+                                                        echo "<p style='color:green;'>" . 'Approved' . "</p>";
                                                     } else {
-                                                       echo "<p style='color:red;'>" . 'Cancled' . "</p>";
+                                                        echo "<p style='color:red;'>" . 'Cancled' . "</p>";
                                                     }
                                                     ?></option>
                                                 <option value="" >Pending</option>
@@ -216,7 +217,9 @@ $BOOKING = new Booking($id);
     <script src="plugins/node-waves/waves.js"></script>
     <script src="plugins/jquery-spinner/js/jquery.spinner.js"></script>
     <script src="js/admin.js"></script>
-    <script src="js/demo.js"></script> 
+    <script src="js/demo.js"></script>  
+    <script src="plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
 </body>
 
 </html>

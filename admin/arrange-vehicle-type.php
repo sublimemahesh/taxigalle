@@ -36,6 +36,8 @@ $VEHICLE_TYPE =  Vehicle_type::all();
 
         <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
+         
     </head>
 
     <body class="theme-red">
@@ -72,7 +74,7 @@ $VEHICLE_TYPE =  Vehicle_type::all();
                                                         <div class="col-md-3" style="list-style: none;">
                                                             <li class="ui-state-default">
                                                                 <span class="number-class">(<?php echo $key + 1; ?>)</span>
-                                                                <div><b>VEHICLE_TYPE :  </b><?php echo $vehicle_type['name']; ?></div>
+                                                                <div><b>VEHICLE_TYPE :  </b> <img  src="<?php echo $vehicle_type['image']; ?>"  name="image_name"></div>
                                                                 <input type="hidden" name="sort[]"  value="<?php echo $vehicle_type["id"]; ?>" class="sort-input"/>
                                                             </li>
                                                         </div>
@@ -143,6 +145,8 @@ $VEHICLE_TYPE =  Vehicle_type::all();
                 $("#sortable").disableSelection();
             });
         </script>
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
     </body>
 
 </html>
