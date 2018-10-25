@@ -79,6 +79,7 @@ class RentCar {
         return $array_res;
     }
 
+    
     public function delete() {
 
         $query = 'DELETE FROM `rent_a_car` WHERE id="' . $this->id . '"';

@@ -63,7 +63,7 @@ $BOOKING_RENT_CAR = new BookingRentCar(NULL)
                                                 <th>Pickup</th> 
                                                 <th>Drop</th> 
                                                 <th>Booked D:T</th> 
-                                                <th>Sratr Dest:</th> 
+                                                <th>Start Dest:</th> 
                                                 <th>End Dest:</th> 
                                                 <th>Status</th> 
                                                 <th>Options</th>
@@ -137,14 +137,13 @@ $BOOKING_RENT_CAR = new BookingRentCar(NULL)
                                         <tfoot>
                                             <tr>
                                                 <th>ID</th>
-                                                <th>Customer</th> 
-                                                <th>Co:Nu</th> 
+                                                <th>Customer</th>  
                                                 <th>Vehicle</th> 
                                                 <th>Pickup</th> 
-                                                <th>Destination</th> 
+                                                <th>Drop</th> 
                                                 <th>Booked D:T</th> 
-                                                <th>Date Time</th> 
-                                                <th>Price</th> 
+                                                <th>Start Dest:</th> 
+                                                <th>End Dest:</th> 
                                                 <th>Status</th> 
                                                 <th>Options</th>
                                             </tr>
