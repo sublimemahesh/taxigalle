@@ -11,7 +11,7 @@ $VEHICLE_TYPE =  Vehicle_type::all();
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Arrange City || Admin || Support Lanka</title>
+        <title>Arrange Vehicle Type || Admin || Taxi Galle</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
