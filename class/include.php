@@ -12,7 +12,8 @@ include_once(dirname(__FILE__) . '/District.php');
 include_once(dirname(__FILE__) . '/Vehicle_type.php');
 include_once(dirname(__FILE__) . '/Vehicle.php');
 include_once(dirname(__FILE__) . '/VehiclePhotos.php');
-include_once(dirname(__FILE__) . '/Booking.php');
+include_once(dirname(__FILE__) . '/RentCar.php');
+include_once(dirname(__FILE__) . '/BookingRentCar.php');
 
 
 

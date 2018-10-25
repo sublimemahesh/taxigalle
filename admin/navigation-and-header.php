@@ -180,16 +180,32 @@ include_once(dirname(__FILE__) . './auth.php');
                         <span>Dashboard</span>
                     </a>
                 </li>
-                
+
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">date_range</i>
                         <span>Booking</span>
                     </a>
                     <ul class="ml-menu">
-                      
+
                         <li>
                             <a href="manage-booking.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">date_range</i>
+                        <span>Booking Rent a Car</span>
+                    </a>
+                    <ul class="ml-menu">
+
+                        <li>
+                            <a href="manage-renter-car-booking.php">
                                 <i class="material-icons">list</i>
                                 <span>Manage</span>
                             </a>
@@ -242,32 +258,32 @@ include_once(dirname(__FILE__) . './auth.php');
                         </li>
                     </ul>
                 </li>
-                <!--                <li>
-                                    <a href="javascript:void(0);" class="menu-toggle">
-                                        <i class="material-icons">message</i>
-                                        <span>Message Request</span>
-                                    </a>
-                                    <ul class="ml-menu">
-                                        <li>
-                                            <a href="manage-messages-member.php">
-                                                <i class="material-icons">face</i>
-                                                <span>Member</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="manage-messages-company.php">
-                                                <i class="material-icons">recent_actors</i>
-                                                <span>Company</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="manage-messages-vacancy.php">
-                                                <i class="material-icons">next_week</i>
-                                                <span>Vacancy</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>-->
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">departure_board</i>
+                        <span>Rent a Car</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-rent-a-car.php">
+                                <i class="material-icons">add</i>
+                                <span>Add New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-rent-a-car.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="arrange-rent-a-car.php">
+                                <i class="material-icons">compare_arrows</i>
+                                <span>Arrange</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <!--                <li>
                                     <a href="javascript:void(0);" class="menu-toggle">
                                         <i class="material-icons">account_balance</i>

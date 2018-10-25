@@ -3,7 +3,7 @@ include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 
 
-$VEHICLE_PHOTO = VehiclePhotos::all();
+$RENT_CAR = RentCar::all();
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@ $VEHICLE_PHOTO = VehiclePhotos::all();
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Arrange Vehicle Photo || Admin || Taxi Galle</title>
+        <title>Arrange Rent a Car || Admin || Taxi Galle</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -36,6 +36,8 @@ $VEHICLE_PHOTO = VehiclePhotos::all();
 
         <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
+         
     </head>
 
     <body class="theme-red">
@@ -61,21 +63,19 @@ $VEHICLE_PHOTO = VehiclePhotos::all();
                                 </ul>
                             </div>
                             <div class="body">
-                                <form method="post" action="post-and-get/vehicle-photos.php" class="form-horizontal" >
+                                <form method="post" action="post-and-get/rent-a-car.php" class="form-horizontal" >
                                     <div class="clearfix m-b-20">
                                         <div class="dd nestable-with-handle">
                                             <ul id="sortable">
                                                 <?php
-                                                if (count($VEHICLE_PHOTO) > 0) {
-                                                    foreach ($VEHICLE_PHOTO as $key => $vehicle_photos) {
+                                                if (count($RENT_CAR) > 0) {
+                                                    foreach ($RENT_CAR as $key =>$rent_car) {
                                                         ?>
                                                         <div class="col-md-3" style="list-style: none;">
                                                             <li class="ui-state-default">
                                                                 <span class="number-class">(<?php echo $key + 1; ?>)</span>
-                                                                <div><b>VEHICLE_TYPE :  </b><?php echo $vehicle_photos['caption']; ?></div>
-                                                                <input type="hidden" name="sort[]"  value="<?php echo $vehicle_photos["id"]; ?>" class="sort-input"/>
-                                                                <img src="../upload/vehicle/gallery/<?php echo $vehicle_photos["image_name"]; ?>" class="img-responsive" width="60%">
-
+                                                                <div><b>Rent a Car:  </b> <img  src="<?php echo $rent_car['image']; ?>"  name="image_name"></div>
+                                                                <input type="hidden" name="sort[]"  value="<?php echo $rent_car["id"]; ?>" class="sort-input"/>
                                                             </li>
                                                         </div>
 
@@ -138,13 +138,15 @@ $VEHICLE_PHOTO = VehiclePhotos::all();
                 relative_urls: false
             });
         </script>
-        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
+
         <script>
             $(function () {
                 $("#sortable").sortable();
                 $("#sortable").disableSelection();
             });
         </script>
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
     </body>
 
 </html>
