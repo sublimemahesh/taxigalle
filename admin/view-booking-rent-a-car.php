@@ -59,7 +59,7 @@ $BOOKING_RENT_CAR = new BookingRentCar($id);
                         </ul>
                     </div>
                     <div class="body">
-                        <form class="" action="post-and-get/rent-a-car.php" method="post"  enctype="multipart/form-data"> 
+                        <form class="" action="post-and-get/booking_rent.php" method="post"  enctype="multipart/form-data"> 
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
                                     <label for="customer">Customre</label>
@@ -175,8 +175,8 @@ $BOOKING_RENT_CAR = new BookingRentCar($id);
                                     <div class="form-group">
                                         <div class="form-line">
                                             <label for="status" class="hidden-lg hidden-md">Status</label>
-                                            <select id="is_approved" name="is_approved" class="form-control" >
-                                                <option value="<?php echo $BOOKING_RENT_CAR->is_approved ?>"><?php
+                                            <select id="is_approved" name="status" class="form-control" >
+                                                <option value="<?php echo $BOOKING_RENT_CAR->status ?>"><?php
                                                     if ($BOOKING_RENT_CAR->status == 0) {
                                                         echo "<p style='color:blue;'>" . 'Pending' . "</p>";
                                                     } elseif ($BOOKING_RENT_CAR->status == 1) {
