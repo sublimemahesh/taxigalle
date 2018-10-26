@@ -24,7 +24,9 @@ $RENT_CAR = new RentCar($id);
         <link href="plugins/animate-css/animate.css" rel="stylesheet" />
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
-        <link href="css/themes/all-themes.css" rel="stylesheet" />
+        <link href="css/themes/all-themes.css" rel="stylesheet" /> 
+        <link href="plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
     </head>
 
     <body class="theme-red">
@@ -57,7 +59,7 @@ $RENT_CAR = new RentCar($id);
                                 </ul>
                             </div>
                             <div class="body row">
-                                <form class="form-horizontal col-sm-9 col-md-12" method="post" action="post-and-get/vehicle-type.php" enctype="multipart/form-data"> 
+                                <form class="form-horizontal col-sm-9 col-md-12" method="post" action="post-and-get/rent-a-car.php" enctype="multipart/form-data"> 
 
                                     <!--vehicle_name-->
                                     <div class="row">
@@ -142,9 +144,9 @@ $RENT_CAR = new RentCar($id);
 
                                     <div class="row clearfix">
                                         <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-4">
-                                            <input type="hidden" id="id" value="<?php echo $rRENT_CAR->id; ?>" name="id"/>
-                                            <input type="hidden" id="image" value="<?php echo $rRENT_CAR->image; ?>" name="oldImageName"/>                                            
-                                            <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="update" value="submit">Save Changes</button>
+                                            <input type="hidden" id="id" value="<?php echo $RENT_CAR->id; ?>" name="id"/>
+                                            <input type="hidden" id="image" value="<?php echo $RENT_CAR->image; ?>" name="oldImageName"/>                                            
+                                            <button type="submit" class="btn btn-primary m-t-15 waves-effect" name="update" value="submit">Update</button>
                                         </div>
                                     </div>
                                 </form>
@@ -165,7 +167,8 @@ $RENT_CAR = new RentCar($id);
         <script src="js/admin.js"></script>
         <script src="js/demo.js"></script>
         <script src="js/add-new-ad.js" type="text/javascript"></script>
-
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
     </body>
 
 </html>

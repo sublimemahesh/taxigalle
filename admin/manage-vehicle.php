@@ -91,8 +91,8 @@ $VEHICLE = new Vehicle(NULL)
                                                     <td><?php echo $vehicle['contact_number'] ?></td> 
 
                                                     <td> 
-                                                        <a href="edit-vehicle.php?id=<?php echo $vehicle['id']; ?>" class="op-link btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
-                                                        <a href="create-vehicle-photos.php?id=<?php echo $vehicle['id']; ?>">  <button class="glyphicon glyphicon-picture arrange-btn"></button></a>
+                                                        <a href="edit-vehicle.php?id=<?php echo $vehicle['id']; ?>" class="op-link btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a> |
+                                                        <a href="create-vehicle-photos.php?id=<?php echo $vehicle['id']; ?>"class="op-link btn btn-sm arrange-btn" ><i class="glyphicon glyphicon-picture "></i></a> | 
 
                                                         <a href="#" class="delete-vehicle btn btn-sm btn-danger" data-id="<?php echo $vehicle['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>

@@ -1,7 +1,7 @@
+  
 <?php
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
-
 
 $RENT_CAR = RentCar::all();
 ?>
@@ -36,8 +36,8 @@ $RENT_CAR = RentCar::all();
 
         <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
         <link href="css/themes/all-themes.css" rel="stylesheet" />
-         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
-         
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
+
     </head>
 
     <body class="theme-red">
@@ -74,7 +74,7 @@ $RENT_CAR = RentCar::all();
                                                         <div class="col-md-3" style="list-style: none;">
                                                             <li class="ui-state-default">
                                                                 <span class="number-class">(<?php echo $key + 1; ?>)</span>
-                                                                <div><b>Rent a Car:  </b> <img  src="<?php echo $rent_car['image']; ?>"  name="image_name"></div>
+                                                                <div><img  src="<?php echo $rent_car['image']; ?>"  name="image"></div>
                                                                 <input type="hidden" name="sort[]"  value="<?php echo $rent_car["id"]; ?>" class="sort-input"/>
                                                             </li>
                                                         </div>

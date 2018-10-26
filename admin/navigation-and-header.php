@@ -199,8 +199,8 @@ include_once(dirname(__FILE__) . './auth.php');
 
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">date_range</i>
-                        <span>Booking Rent a Car</span>
+                        <i class="material-icons">calendar_today    </i>
+                        <span>Booking Taxi</span>
                     </a>
                     <ul class="ml-menu">
 

@@ -75,8 +75,6 @@ if (isset($_POST['update'])) {
 
     $OLD_IMAGE = (explode("/", $img)[5]);
 
-    $unlink('../../upload/vehicle-type/' . $OLD_IMAGE); // correct
-
     $server_name = "http://" . $_SERVER['SERVER_NAME'];
 
     $dir_dest_url = $server_name . '/upload/vehicle-type/';
@@ -89,6 +87,9 @@ if (isset($_POST['update'])) {
     $imgName = null;
 
 
+    $BOOKING_RENT = New RentCar($_POST['id']);
+    $VALID = new Validator();
+    
     if ($handle->uploaded) {
         $handle->image_resize = true;
         $handle->file_new_name_body = TRUE;
@@ -107,25 +108,26 @@ if (isset($_POST['update'])) {
 
             $imgName = $handle->file_dst_name;
         }
+        unlink('../../upload/vehicle-type/' . $OLD_IMAGE); // correct 
+        $BOOKING_RENT->image = $dir_dest_url . $imgName;
+    } else {
+
+        $BOOKING_RENT->image = $img;
     }
 
 
-    $RENT_CAR = New Vehicle_type($_POST['id']);
-    $VALID = new Validator();
 
-    $RENT_CAR->name = $_POST['name'];
-    $RENT_CAR->base = $_POST['base'];
-    $RENT_CAR->unit = $_POST['unit'];
-    $RENT_CAR->passengers = $_POST['passengers'];
+    $BOOKING_RENT->name = $_POST['name'];
+    $BOOKING_RENT->price_per_day = $_POST['price_per_day'];
+    $BOOKING_RENT->price_per_extra_milage = $_POST['price_per_extra_milage'];
+    $BOOKING_RENT->passengers = $_POST['passengers'];
 
-    $RENT_CAR->image = $dir_dest_url . $imgName;
-
-    $VALID->check($RENT_CAR, [
+    $VALID->check($BOOKING_RENT, [
         'name' => ['required' => TRUE],
     ]);
 
     if ($VALID->passed()) {
-        $RENT_CAR->update();
+        $BOOKING_RENT->update();
 
         if (!isset($_SESSION)) {
             session_start();
@@ -147,12 +149,11 @@ if (isset($_POST['update'])) {
 }
 
 if (isset($_POST['save-arrange'])) {
-
+ 
     foreach ($_POST['sort'] as $key => $img) {
-        
         $key = $key + 1;
 
-        $RENT_CAR = RentCar::arrange($key, $img);
+        $BOOKING_RENT = RentCar::arrange($key, $img);
 
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
