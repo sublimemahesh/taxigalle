@@ -25,6 +25,10 @@ $VEHICLE_TYPE = new Vehicle_type($id);
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+
+        <link href="plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
+
     </head>
 
     <body class="theme-red">
@@ -73,7 +77,7 @@ $VEHICLE_TYPE = new Vehicle_type($id);
                                             </div>
                                         </div>
                                     </div>
- 
+
                                     <!--Base-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
@@ -103,7 +107,7 @@ $VEHICLE_TYPE = new Vehicle_type($id);
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!--Passengers-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
@@ -128,10 +132,10 @@ $VEHICLE_TYPE = new Vehicle_type($id);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="vehicle_image" class="hidden-lg hidden-md">Vehicle Image</label>
-                                                   
-                                                    <input type="file" id="vehicle_image" class="form-control" autocomplete="off" name="image_name" value="<?php  
-                                                          $VEHICLE_TYPE->image ;
-                                                            ?>" >
+
+                                                    <input type="file" id="vehicle_image" class="form-control" autocomplete="off" name="image_name" value="<?php
+                                                    $VEHICLE_TYPE->image;
+                                                    ?>" >
                                                     <img  src="<?php echo $VEHICLE_TYPE->image ?>"  name="image_name">
                                                 </div>
                                             </div>
@@ -153,7 +157,7 @@ $VEHICLE_TYPE = new Vehicle_type($id);
 
             </div>
         </section>
- 
+
         <!-- Jquery Core Js -->
         <script src="plugins/jquery/jquery.min.js"></script>
         <script src="plugins/bootstrap/js/bootstrap.js"></script> 
@@ -163,6 +167,8 @@ $VEHICLE_TYPE = new Vehicle_type($id);
         <script src="js/admin.js"></script>
         <script src="js/demo.js"></script>
         <script src="js/add-new-ad.js" type="text/javascript"></script>
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
 
     </body>
 

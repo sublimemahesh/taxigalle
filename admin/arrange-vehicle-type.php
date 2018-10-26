@@ -56,7 +56,7 @@ $VEHICLE_TYPE =  Vehicle_type::all();
                                 </h2>
                                 <ul class="header-dropdown">
                                     <li class="">
-                                        <a href="manage-vehicle-type.php">
+                                        <a href="manage-rent-a-car.php">
                                             <i class="material-icons">list</i> 
                                         </a>
                                     </li>

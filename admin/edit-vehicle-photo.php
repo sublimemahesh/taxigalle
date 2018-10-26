@@ -25,6 +25,10 @@ $VEHICLE_PHOTO = new VehiclePhotos($id);
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
+        
+        <link href="plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
+        
     </head>
 
     <body class="theme-red">
@@ -117,6 +121,8 @@ $VEHICLE_PHOTO = new VehiclePhotos($id);
         <script src="js/admin.js"></script>
         <script src="js/demo.js"></script>
         <script src="js/add-new-ad.js" type="text/javascript"></script>
+        <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
+        <script src="plugins/sweetalert/sweetalert.min.js"></script>
 
     </body>
 

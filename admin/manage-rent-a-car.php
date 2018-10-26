@@ -13,7 +13,6 @@ $RENT_CAR = new RentCar(NULL)
         <title>Manage Rent Car || Taxi Galle Admin || </title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
-
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
@@ -92,9 +91,9 @@ $RENT_CAR = new RentCar(NULL)
                                                         <?php echo $rent_car['passengers'] ?>
                                                     </td>
                                                     <td> 
-                                                        <a href="edit-rent-a-car.php?id=<?php echo $rent_car['id']; ?>" class="op-link btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+                                                        <a href="edit-rent-a-car.php?id=<?php echo $rent_car['id']; ?>" class="op-link btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a> | 
 
-                                                        <a href="#" class="delete-rent-car btn btn-sm btn-danger" data-id="<?php echo $rent_car['id']; ?>">
+                                                        <a href="#" class="delete-rent-car btn btn-sm btn-danger" data-id="<?php echo $rent_car['id']; ?>"> 
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
                                                         </a>
                                                     </td>

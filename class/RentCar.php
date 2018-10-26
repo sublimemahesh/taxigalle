@@ -67,7 +67,7 @@ class RentCar {
 
     public function all() {
 
-        $query = "SELECT * FROM `rent_a_car` ORDER BY `passengers` ";
+        $query = "SELECT * FROM `rent_a_car` ORDER BY `sort` ASC";
         $db = new Database();
         $result = $db->readQuery($query);
         $array_res = array();
@@ -79,7 +79,27 @@ class RentCar {
         return $array_res;
     }
 
-    
+    public function update() {
+
+        $query = "UPDATE `rent_a_car` SET "
+                . "`name` ='" . $this->name . "', "
+                . "`price_per_day` ='" . $this->price_per_day . "', "
+                . "`price_per_extra_milage` ='" . $this->price_per_extra_milage . "', "
+                . "`image` ='" . $this->image . "', "
+                . "`passengers` ='" . $this->passengers . "' "
+                . "WHERE `id` = '" . $this->id . "'";
+
+        $db = new Database();
+
+        $result = $db->readQuery($query);
+
+        if ($result) {
+            return $this->__construct($this->id);
+        } else {
+            return FALSE;
+        }
+    }
+
     public function delete() {
 
         $query = 'DELETE FROM `rent_a_car` WHERE id="' . $this->id . '"';
@@ -89,11 +109,13 @@ class RentCar {
         return $db->readQuery($query);
     }
 
-    public function arrange($key, $vehicle) {
-        $query = "UPDATE `rent_a_car` SET `sort` = '" . $key . "'  WHERE id = '" . $vehicle . "'";
+    public function arrange($key, $img) {
+        $query = "UPDATE `rent_a_car` SET `sort` = '" . $key . "'  WHERE id = '" . $img . "'";
         $db = new Database();
         $result = $db->readQuery($query);
         return $result;
     }
+
+   
 
 }

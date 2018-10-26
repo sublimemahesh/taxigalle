@@ -216,8 +216,7 @@ $BOOKING_RENT_CAR = new BookingRentCar($id);
     <script src="plugins/jquery-spinner/js/jquery.spinner.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/demo.js"></script>  
-    <script src="plugins/sweetalert/sweetalert.min.js"></script>
-    <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
+    <script src="plugins/sweetalert/sweetalert.min.js"></script> 
 </body>
 
 </html>

@@ -75,8 +75,6 @@ if (isset($_POST['update'])) {
 
     $OLD_IMAGE = (explode("/", $img)[5]);
 
-    $unlink('../../upload/vehicle-type/' . $OLD_IMAGE); // correct
-
     $server_name = "http://" . $_SERVER['SERVER_NAME'];
 
     $dir_dest_url = $server_name . '/upload/vehicle-type/';
@@ -85,8 +83,11 @@ if (isset($_POST['update'])) {
 
     $handle = new Upload($_FILES['image_name']);
 
-
     $imgName = null;
+
+
+    $VEHICLE_TYPE = New Vehicle_type($_POST['id']);
+    $VALID = new Validator();
 
 
     if ($handle->uploaded) {
@@ -107,18 +108,17 @@ if (isset($_POST['update'])) {
 
             $imgName = $handle->file_dst_name;
         }
+        unlink('../../upload/vehicle-type/' . $OLD_IMAGE); // correct 
+        $VEHICLE_TYPE->image = $dir_dest_url . $imgName;
+    } else {
+        $VEHICLE_TYPE->image = $img;
     }
 
-
-    $VEHICLE_TYPE = New Vehicle_type($_POST['id']);
-    $VALID = new Validator();
-
     $VEHICLE_TYPE->name = $_POST['name'];
-    $VEHICLE_TYPE->base = $_POST['base'];
     $VEHICLE_TYPE->unit = $_POST['unit'];
+    $VEHICLE_TYPE->base = $_POST['base'];
     $VEHICLE_TYPE->passengers = $_POST['passengers'];
 
-    $VEHICLE_TYPE->image = $dir_dest_url . $imgName;
 
     $VALID->check($VEHICLE_TYPE, [
         'name' => ['required' => TRUE],

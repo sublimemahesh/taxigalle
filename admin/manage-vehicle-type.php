@@ -10,7 +10,7 @@ $VEHICLE_TYPE = new Vehicle_type(NULL)
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Manage vehicle || Admin || Taxi Galle</title>
+        <title>Manage vehicle Type || Admin || Taxi Galle</title>
         <!-- Favicon-->
         <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -82,7 +82,7 @@ $VEHICLE_TYPE = new Vehicle_type(NULL)
                                                     <td><?php echo $vehicle_type['passengers'] ?></td> 
 
                                                     <td> 
-                                                        <a href="edit-vehicle-type.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a>
+                                                        <a href="edit-vehicle-type.php?id=<?php echo $vehicle_type['id']; ?>" class="op-link btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i></a> | 
 
                                                         <a href="#" class="delete-vehicle-type btn btn-sm btn-danger" data-id="<?php echo $vehicle_type['id']; ?>">
                                                             <i class="glyphicon glyphicon-trash" data-type="cancel"></i>
