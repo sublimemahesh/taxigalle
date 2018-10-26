@@ -4,11 +4,11 @@ include_once(dirname(__FILE__) . '/../../../class/include.php');
 include_once(dirname(__FILE__) . '/../../auth.php');
 
 
-if ($_POST['action'] == 'GETNEWBOOKINGTAXI') {
+if ($_POST['action'] == 'GETNEWBOOKINGRENTCAR') {
 
-    $BOOKINGTAXI = new BookingRentCar(NULL);
+    $BOOKINGRENTCAR = new BookingRentCar(NULL);
 
-    $result = $BOOKINGTAXI->GetNewBookingsTaxi();
+    $result = $BOOKINGRENTCAR->GetNewBookingsRentCar();
     echo json_encode($result);
     header('Content-type: application/json');
     exit();

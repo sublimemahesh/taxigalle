@@ -37,10 +37,10 @@ setInterval(function () {
  
  setInterval(function () {
     $.ajax({
-        url: "post-and-get/ajax/booking_taxi.php",
+        url: "post-and-get/ajax/booking_rent_car.php",
         type: "POST",
         data: {
-            action: 'GETNEWBOOKINGTAXI'
+            action: 'GETNEWBOOKINGRENTCAR'
         },
         dataType: "JSON",
 

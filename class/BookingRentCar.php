@@ -109,7 +109,7 @@ class BookingRentCar {
         return $db->readQuery($query);
     }
 
-    public function GetNewBookingsTaxi() {
+    public function GetNewBookingsRentCar() {
 
         $query = "SELECT * FROM `rent_car_booking` WHERE `status` = '0' ORDER BY `booked_date_time` DESC";
         $db = new Database();
