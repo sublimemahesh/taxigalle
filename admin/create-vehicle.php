@@ -65,7 +65,7 @@ include_once(dirname(__FILE__) . './auth.php');
                                                 <?php
                                                 foreach (Vehicle_type::all() as $key => $vehicle_type) {
                                                     ?>
-                                                    <option value="<?php echo $vehicle_type['name'] ?>"><?php echo $vehicle_type['name'] ?></option>
+                                                    <option value="<?php echo $vehicle_type['id'] ?>"><?php echo $vehicle_type['name'] ?></option>
                                                     <?php
                                                 }
                                                 ?>
@@ -197,8 +197,7 @@ include_once(dirname(__FILE__) . './auth.php');
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5">  
 
                                 </div>  
-                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                    <input type="hidden" name="type" value="<?php echo $vehicle_type['id'] ?>"/>
+                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7"> 
                                     <button class="btn btn-primary m-t-15 waves-effect  pull-left" type="submit" name="add-vehicle">Add Vehicle</button>
                                     <div class=" text-danger btn-padding pull-left error-mess" id="message" ></div> 
                                 </div>

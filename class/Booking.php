@@ -21,12 +21,13 @@ class Booking {
     public $booked_date_time;
     public $datetime;
     public $price;
+    public $booked_vehicle;
     public $is_approved;
 
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`user`,`vehicle`,`pickup`,`destination`,`booked_date_time`,`datetime`,`price`,`is_approved` FROM `booking` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`user`,`vehicle`,`pickup`,`destination`,`booked_date_time`,`datetime`,`price`,`booked_vehicle`,`is_approved` FROM `booking` WHERE `id`=" . $id;
 
             $db = new Database();
 
@@ -40,6 +41,7 @@ class Booking {
             $this->booked_date_time = $result['booked_date_time'];
             $this->datetime = $result['datetime'];
             $this->price = $result['price'];
+            $this->booked_vehicle = $result['booked_vehicle'];
             $this->is_approved = $result['is_approved'];
 
             return $this;
@@ -86,11 +88,15 @@ class Booking {
         return $array_res;
     }
 
-    public function update() {
+       public function update() {
 
-        $query = 'UPDATE `booking` SET `is_approved`= "' . $this->is_approved . '" WHERE id="' . $this->id . '"';
-
+        $query = "UPDATE `booking` SET " 
+                . "`vehicle` ='" . $this->booked_vehicle . "', "
+                . "`is_approved` ='" . $this->is_approved . "' "
+                . "WHERE `id` = '" . $this->id . "'";
+        dd($query);
         $db = new Database();
+
         $result = $db->readQuery($query);
 
         if ($result) {
@@ -99,6 +105,7 @@ class Booking {
             return FALSE;
         }
     }
+   
 
     public function delete() {
 
