@@ -7,6 +7,7 @@ $RENT_CAR = RentCar::all();
 ?>
 <!DOCTYPE html>
 <html>
+    
 
     <head>
         <meta charset="UTF-8">
