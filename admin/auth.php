@@ -4,6 +4,6 @@ if (!isset($_SESSION)) {
     session_start();
 } 
 
-if (!User::authenticate()) {
+if (!Admin::authenticate()) {
     redirect('login.php'); 
 }

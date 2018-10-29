@@ -5,6 +5,7 @@ include_once(dirname(__FILE__) . '/Helper.php');
 include_once(dirname(__FILE__) . '/Upload.php');
 include_once(dirname(__FILE__) . '/Database.php');
 include_once(dirname(__FILE__) . '/User.php');
+include_once(dirname(__FILE__) . '/Admin.php');
 include_once(dirname(__FILE__) . '/Message.php');
 include_once(dirname(__FILE__) . '/Validator.php');
 include_once(dirname(__FILE__) . '/City.php');
@@ -15,9 +16,6 @@ include_once(dirname(__FILE__) . '/VehiclePhotos.php');
 include_once(dirname(__FILE__) . '/RentCar.php');
 include_once(dirname(__FILE__) . '/Booking.php');
 include_once(dirname(__FILE__) . '/BookingRentCar.php');
-
-
-
 
 function dd($data) {
     var_dump($data);

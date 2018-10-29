@@ -6,179 +6,89 @@
  * @author sublime holdings
  * @web www.sublime.lk
  */
-class User {
+class Users {
 
     public $id;
+    public $unique_id;
     public $name;
     public $email;
-    public $createdAt;
-    public $isActive;
-    public $authToken;
-    public $lastLogin;
-    public $username;
-    public $resetCode;
-    private $password;
+    public $contact_no;
+    public $encrypted_password;
+    public $otp;
+    public $verified;
+    public $created_at;
 
     public function __construct($id) {
         if ($id) {
 
-            $query = "SELECT `id`,`name`,`email`,`createdAt`,`isActive`,`authToken`,`lastLogin`,`username`,`resetcode` FROM `admin` WHERE `id`=" . $id;
+            $query = "SELECT `id`,`unique_id`,`name`,`email`,`contact_no`,`encrypted_password`,`otp`,`verified`,`created_at` FROM `users` WHERE `id`=" . $id;
 
             $db = new Database();
 
             $result = mysql_fetch_array($db->readQuery($query));
 
             $this->id = $result['id'];
+            $this->unique_id = $result['unique_id'];
             $this->name = $result['name'];
             $this->email = $result['email'];
-            $this->createdAt = $result['createdAt'];
-            $this->isActive = $result['isActive'];
-            $this->lastLogin = $result['lastLogin'];
-            $this->username = $result['username'];
-            $this->authToken = $result['authToken'];
-            $this->resetCode = $result['resetcode'];
+            $this->contact_no = $result['contact_no'];
+            $this->encrypted_password = $result['encrypted_password'];
+            $this->otp = $result['otp'];
+            $this->verified = $result['verified'];
+            $this->created_at = $result['created_at'];
 
             return $result;
         }
     }
 
-    public function create($name, $email, $username, $passwor) {
+    public function create() {
 
-        $enPass = md5($passwor);
-
-        date_default_timezone_set('Asia/Colombo');
-
-        $createdAt = date('Y-m-d H:i:s');
-
-        $query = "INSERT INTO `admin` (name, email, createdAt, isActive, username, password) VALUES  ('" . $name . "', '" . $email . "', '" . $createdAt . "', '" . 1 . "', '" . $username . "', '" . $enPass . "')";
+        $query = "INSERT INTO `users` (`unique_id`, `name`, `email`,`contact_no`,`encrypted_password`,`otp`,`verified`,`created_at`) VALUES  "
+                . "('"
+                . $this->unique_id . "','"
+                . $this->name . "', '"
+                . $this->email . "', '"
+                . $this->contact_no . "', '"
+                . $this->encrypted_password . "', '"
+                . $this->otp . "', '"
+                . $this->verified . "', '"
+                . $this->created_at . "')";
 
         $db = new Database();
 
         $result = $db->readQuery($query);
+
         if ($result) {
             $last_id = mysql_insert_id();
+
             return $this->__construct($last_id);
         } else {
             return FALSE;
         }
     }
 
-    public function login($username, $password) {
+    public function getVerifiedUsers() {
 
-        $enPass = md5($password);
-        $query = "SELECT `id`,`name`,`email`,`createdAt`,`isActive`,`lastLogin`,`username` FROM `admin` WHERE `username`= '" . $username . "' AND `password`= '" . $enPass . "'";
-
+        $query = "SELECT * FROM `users` WHERE `verified` = 1 ";
         $db = new Database();
-
-        $result = mysql_fetch_array($db->readQuery($query));
-
-
-        if (!$result) {
-            return FALSE;
-        } else {
-            $this->id = $result['id'];
-            $this->setAuthToken($result['id']);
-            $this->setLastLogin($this->id);
-
-            $user = $this->__construct($this->id);
-
-            $this->setUserSession($user);
-
-            return $user;
-        }
-    }
-
-    public function checkOldPass($id, $password) {
-
-        $enPass = md5($password);
-
-        $query = "SELECT `id` FROM `admin` WHERE `id`= '" . $id . "' AND `password`= '" . $enPass . "'";
-
-        $db = new Database();
-
-        $result = mysql_fetch_array($db->readQuery($query));
-
-        if (!$result) {
-            return FALSE;
-        } else {
-            return TRUE;
-        }
-    }
-
-    public function changePassword($id, $password) {
-
-        $enPass = md5($password);
-
-        $query = "UPDATE  `admin` SET "
-                . "`password` ='" . $enPass . "' "
-                . "WHERE `id` = '" . $id . "'";
-
-        $db = new Database();
-
         $result = $db->readQuery($query);
+        $array_res = array();
 
-        if ($result) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
-    }
-
-    public function authenticate() {
-
-        if (!isset($_SESSION)) {
-            session_start();
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
         }
 
-        $id = NULL;
-        $authToken = NULL;
-
-        if (isset($_SESSION["id"])) {
-            $id = $_SESSION["id"];
-        }
-
-        if (isset($_SESSION["authToken"])) {
-            $authToken = $_SESSION["authToken"];
-        }
-
-        $query = "SELECT `id` FROM `admin` WHERE `id`= '" . $id . "' AND `authToken`= '" . $authToken . "'";
-
-        $db = new Database();
-
-        $result = mysql_fetch_array($db->readQuery($query));
-
-        if (!$result) {
-            return FALSE;
-        } else {
-
-            return TRUE;
-        }
-    }
-
-    public function logOut() {
-
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-
-        unset($_SESSION["id"]);
-        unset($_SESSION["name"]);
-        unset($_SESSION["email"]);
-        unset($_SESSION["isActive"]);
-        unset($_SESSION["authToken"]);
-        unset($_SESSION["lastLogin"]);
-        unset($_SESSION["username"]);
-
-        return TRUE;
+        return $array_res;
     }
 
     public function update() {
 
-        $query = "UPDATE  `admin` SET "
+        $query = "UPDATE `rent_a_car` SET "
                 . "`name` ='" . $this->name . "', "
-                . "`username` ='" . $this->username . "', "
-                . "`email` ='" . $this->email . "', "
-                . "`isActive` ='" . $this->isActive . "' "
+                . "`price_per_day` ='" . $this->price_per_day . "', "
+                . "`price_per_extra_milage` ='" . $this->price_per_extra_milage . "', "
+                . "`contact_no` ='" . $this->contact_no . "', "
+                . "`encrypted_password` ='" . $this->encrypted_password . "' "
                 . "WHERE `id` = '" . $this->id . "'";
 
         $db = new Database();
@@ -192,151 +102,13 @@ class User {
         }
     }
 
-    private function setUserSession($user) {
+    public function delete() {
 
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-
-        $_SESSION["id"] = $user['id'];
-        $_SESSION["name"] = $user['name'];
-        $_SESSION["email"] = $user['email'];
-        $_SESSION["isActive"] = $user['isActive'];
-        $_SESSION["authToken"] = $user['authToken'];
-        $_SESSION["lastLogin"] = $user['lastLogin'];
-        $_SESSION["username"] = $user['username'];
-    }
-
-    private function setAuthToken($id) {
-
-        $authToken = md5(uniqid(rand(), true));
-
-        $query = "UPDATE `admin` SET `authToken` ='" . $authToken . "' WHERE `id`='" . $id . "'";
+        $query = 'DELETE FROM `rent_a_car` WHERE id="' . $this->id . '"';
 
         $db = new Database();
 
-        if ($db->readQuery($query)) {
-
-            return $authToken;
-        } else {
-            return FALSE;
-        }
-    }
-
-    private function setLastLogin($id) {
-
-        date_default_timezone_set('Asia/Colombo');
-
-        $now = date('Y-m-d H:i:s');
-
-        $query = "UPDATE `admin` SET `lastLogin` ='" . $now . "' WHERE `id`='" . $id . "'";
-
-        $db = new Database();
-
-        if ($db->readQuery($query)) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
-    }
-
-    public function checkEmail($email) {
-
-        $query = "SELECT `email`,`username` FROM `admin` WHERE `email`= '" . $email . "'";
-
-        $db = new Database();
-
-        $result = mysql_fetch_array($db->readQuery($query));
-
-        if (!$result) {
-            return FALSE;
-        } else {
-            return $result;
-        }
-    }
-
-    public function GenarateCode($email) {
-
-        $rand = rand(10000, 99999);
-
-        $query = "UPDATE  `admin` SET "
-                . "`resetcode` ='" . $rand . "' "
-                . "WHERE `email` = '" . $email . "'";
-
-        $db = new Database();
-
-        $result = $db->readQuery($query);
-
-        if ($result) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
-    }
-
-    public function SelectForgetUser($email) {
-
-        if ($email) {
-
-            $query = "SELECT `email`,`username`,`resetcode` FROM `admin` WHERE `email`= '" . $email . "'";
-
-            $db = new Database();
-
-            $result = mysql_fetch_array($db->readQuery($query));
-
-            $this->username = $result['username'];
-            $this->email = $result['email'];
-            $this->restCode = $result['resetcode'];
-
-            return $result;
-        }
-    }
-
-    public function SelectResetCode($code) {
-
-        $query = "SELECT `id` FROM `admin` WHERE `resetcode`= '" . $code . "'";
-
-        $db = new Database();
-
-        $result = mysql_fetch_array($db->readQuery($query));
-
-        if (!$result) {
-            return FALSE;
-        } else {
-
-            return TRUE;
-        }
-    }
-
-    public function updatePassword($password, $code) {
-
-        $enPass = md5($password);
-
-        $query = "UPDATE  `admin` SET "
-                . "`password` ='" . $enPass . "' "
-                . "WHERE `resetcode` = '" . $code . "'";
-
-        $db = new Database();
-
-        $result = $db->readQuery($query);
-
-        if ($result) {
-            return TRUE;
-        } else {
-            return FALSE;
-        }
-    }
-
-    public function getUserByUniqueId($unique_id) {
-
-
-        $query = "SELECT * FROM `users` WHERE `unique_id` = '" . $unique_id . "'";
-
-        $db = new Database();
-        $result = mysql_query($query);
-        $row = mysql_fetch_array($db->readQuery($query));
-
-        return $row;
+        return $db->readQuery($query);
     }
 
 }
