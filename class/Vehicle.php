@@ -114,11 +114,20 @@ class Vehicle {
         return $db->readQuery($query);
     }
 
-//    public function arrange($key, $vehicle) {
-//        $query = "UPDATE `vehicle` SET `sort` = '" . $key . "'  WHERE id = '" . $vehicle . "'";
-//        $db = new Database();
-//        $result = $db->readQuery($query);
-//        return $result;
-//    }
+    public function getVehicleByCity($CITY, $VEHICLE) {
+
+
+        $query = "SELECT * FROM `vehicle` WHERE `city` = '" . $CITY . "' AND  `type` = '" . $VEHICLE . "'";
+        $db = new Database();
+
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
+    }
 
 }

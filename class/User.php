@@ -111,4 +111,16 @@ class Users {
         return $db->readQuery($query);
     }
 
+    public function getUserByUniqueId($unique_id) {
+
+
+        $query = "SELECT * FROM `users` WHERE `unique_id` = '" . $unique_id . "'";
+
+        $db = new Database();
+        $result = mysql_query($query);
+        $row = mysql_fetch_array($db->readQuery($query));
+
+        return $row;
+    }
+
 }

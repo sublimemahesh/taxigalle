@@ -8,7 +8,7 @@ if (isset($_POST['add-vehicle'])) {
 
     $VEHICLE = New Vehicle(NULL);
     $VALID = new Validator();
-
+    
 
     $VEHICLE->type = $_POST['type'];
     $VEHICLE->model_and_brand = $_POST['model_and_brand'];

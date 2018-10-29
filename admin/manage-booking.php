@@ -81,7 +81,7 @@ $BOOKING = new Booking(NULL)
                                                 <tr id="row_<?php echo $booking['id']; ?>">
                                                     <td><?php echo $booking['id']; ?></td> 
                                                     <?php
-                                                    $USER = new User(NULL);
+                                                    $USER = new Users(NULL);
                                                     $users = $USER->getUserByUniqueId($booking['user']);
                                                     ?>
 

@@ -77,7 +77,7 @@ $BOOKING_RENT_CAR = new BookingRentCar(NULL)
                                                     <td><?php echo $booking['id']; ?></td> 
                                                     <td>
                                                         <?php
-                                                        $USER = new User(NULL);
+                                                        $USER = new Users(NULL);
                                                         $users = $USER->getUserByUniqueId($booking['user']);
                                                         echo $users['name'];
                                                         ?>

@@ -69,7 +69,7 @@ $BOOKING_RENT_CAR = new BookingRentCar($id);
                                         <div class="form-line">
                                             <label for="customer" class="hidden-lg hidden-md">Customre</label>
                                             <div class="form-control"><?php
-                                                $USER = new User(NULL);
+                                                $USER = new Users(NULL);
                                                 $users = $USER->getUserByUniqueId($BOOKING_RENT_CAR->user);
                                                 echo $users['name'];
                                                 ?>
