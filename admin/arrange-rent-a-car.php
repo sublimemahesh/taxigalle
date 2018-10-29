@@ -56,7 +56,7 @@ $RENT_CAR = RentCar::all();
                                 </h2>
                                 <ul class="header-dropdown">
                                     <li class="">
-                                        <a href="manage-vehicle-type.php">
+                                        <a href="manage-rent-a-car.php">
                                             <i class="material-icons">list</i> 
                                         </a>
                                     </li>
@@ -71,14 +71,13 @@ $RENT_CAR = RentCar::all();
                                                 if (count($RENT_CAR) > 0) {
                                                     foreach ($RENT_CAR as $key =>$rent_car) {
                                                         ?>
-                                                        <div class="col-md-3" style="list-style: none;">
+                                                        <div class="col-md-4" style="list-style: none;">
                                                             <li class="ui-state-default">
                                                                 <span class="number-class">(<?php echo $key + 1; ?>)</span>
                                                                 <div><img  src="<?php echo $rent_car['image']; ?>"  name="image"></div>
                                                                 <input type="hidden" name="sort[]"  value="<?php echo $rent_car["id"]; ?>" class="sort-input"/>
                                                             </li>
                                                         </div>
-
                                                         <?php
                                                     }
                                                 } else {
