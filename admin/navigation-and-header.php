@@ -186,15 +186,22 @@ include_once(dirname(__FILE__) . './auth.php');
                         <i class="material-icons">date_range</i>
                         <span>Booking</span>
                     </a>
-                     
-                </li>
 
+                </li>
+                <li>
+                    <a href="manage-active-users.php" class="menu-toggle">
+                        <i class="material-icons">perm_identity</i>
+                        <span>Active Users</span>
+                    </a>
+
+                </li>
+                
                 <li>
                     <a href="manage-renter-car-booking.php" class="menu-toggle">
                         <i class="material-icons">calendar_today    </i>
                         <span>Booking Rent Car</span>
                     </a>
-                     
+
                 </li>
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
