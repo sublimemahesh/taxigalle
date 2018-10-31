@@ -25,7 +25,7 @@ $VEHICLE = new Vehicle($id);
         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet">
         <link href="css/themes/all-themes.css" rel="stylesheet" />
-         <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
+        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
     </head>
 
     <body class="theme-red">
@@ -120,6 +120,49 @@ $VEHICLE = new Vehicle($id);
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="district">District</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="district" class="hidden-lg hidden-md">District</label>
+
+                                                    <select class="form-control" autocomplete="off" name="district" id="district" >
+                                                        <option value="<?php $VEHICLE->city ?>"> -- Please Select Your District -- </option>
+                                                        <?php foreach (District::all() as $key => $district) {
+                                                            ?>
+                                                            <option value="<?php echo $district['id'] ?>"> <?php echo $district['name'] ?>                                        
+                                                            </option>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--City-->
+
+                                    </div> 
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                            <label for="city-bar">City</label>
+                                        </div>
+                                        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                            <div class="form-group">
+                                                <div class="form-line">
+                                                    <label for="city-bar" class="hidden-lg hidden-md">City</label>
+
+                                                    <select class="form-control" autocomplete="off"  id="city-bar" autocomplete="off" name="city" required="TRUE">
+                                                        <option value=""> -- Please Select a District First -- </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--City-->
+
+                                    </div> 
                                     <!--Contact Number-->
                                     <div class="row clearfix">
                                         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
@@ -143,7 +186,7 @@ $VEHICLE = new Vehicle($id);
                                             <div class="form-group">
                                                 <div class="form-line">
                                                     <label for="Vehicle Image" class="hidden-lg hidden-md">Vehicle Image</label>
-        <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
+                                                    <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" /> 
                                                     <input type="file" id="file" class="form-control" placeholder="Enter Contact Number" autocomplete="off" name="image_name" value="<?php echo $VEHICLE->image_name; ?>" >
                                                     <img src="../upload/vehicle/<?php echo $VEHICLE->image_name ?>" id="image" class="view-edit-img img img-responsive img-thumbnail" name="image" alt="old image">
 
@@ -178,9 +221,10 @@ $VEHICLE = new Vehicle($id);
         <script src="js/admin.js"></script>
         <script src="js/demo.js"></script>
         <script src="js/add-new-ad.js" type="text/javascript"></script>
-      
+
         <script src="plugins/sweetalert/sweetalert.min.js"></script>
         <script src="js/ajax/booking-indicator.js" type="text/javascript"></script>
+        <script src="js/city.js" type="text/javascript"></script>
     </body>
 
 </html>
