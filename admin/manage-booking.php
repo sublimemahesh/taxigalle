@@ -64,7 +64,7 @@ $BOOKING = new Booking(NULL)
                                                 <th>ID</th>
                                                 <th>Customer</th> 
                                                 <th>Co:Nu</th> 
-                                                <th>Vehicle</th> 
+                                                <th>Vehicle Type</th> 
                                                 <th>Pickup</th> 
                                                 <th>Destination</th> 
                                                 <th>Booked D:T</th> 
@@ -99,6 +99,7 @@ $BOOKING = new Booking(NULL)
                                                         echo $VEHICLE->name;
                                                         ?>
                                                     </td>
+                                                    
                                                     <td>
                                                         <?php
                                                         echo $booking['pickup'];
@@ -149,7 +150,7 @@ $BOOKING = new Booking(NULL)
                                                 <th>ID</th>
                                                 <th>Customer</th> 
                                                 <th>Co:Nu</th> 
-                                                <th>Vehicle</th> 
+                                               <th>Vehicle Type</th> 
                                                 <th>Pickup</th> 
                                                 <th>Destination</th> 
                                                 <th>Booked D:T</th> 

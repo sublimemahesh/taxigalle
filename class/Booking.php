@@ -88,13 +88,14 @@ class Booking {
         return $array_res;
     }
 
-       public function update() {
+    public function update() {
 
-        $query = "UPDATE `booking` SET " 
-                . "`vehicle` ='" . $this->booked_vehicle . "', "
+        $query = "UPDATE `booking` SET "
+                . "`vehicle` ='" . $this->vehicle . "', "
+                . "`booked_vehicle` ='" . $this->booked_vehicle . "', "
                 . "`is_approved` ='" . $this->is_approved . "' "
                 . "WHERE `id` = '" . $this->id . "'";
-        dd($query);
+
         $db = new Database();
 
         $result = $db->readQuery($query);
@@ -105,7 +106,6 @@ class Booking {
             return FALSE;
         }
     }
-   
 
     public function delete() {
 
@@ -125,6 +125,21 @@ class Booking {
         while ($row = mysql_fetch_array($result)) {
             array_push($array_res, $row);
         }
+        return $array_res;
+    }
+
+    public function GetBookedVehile($booked_vehicle) {
+
+        $query = "SELECT * FROM `booking` WHERE `booked_vehicle` =$booked_vehicle";
+       
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
         return $array_res;
     }
 

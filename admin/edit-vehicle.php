@@ -1,4 +1,4 @@
-<?php
+    <?php
 include_once(dirname(__FILE__) . '/../class/include.php');
 include_once(dirname(__FILE__) . '/auth.php');
 
@@ -154,7 +154,7 @@ $VEHICLE = new Vehicle($id);
                                                 <div class="form-line">
                                                     <label for="city-bar" class="hidden-lg hidden-md">City</label>
 
-                                                    <select class="form-control" autocomplete="off"  id="city-bar" autocomplete="off" name="city" required="TRUE">
+                                                    <select class="form-control" autocomplete="off"  id="city-bar" autocomplete="off" name="city"  >
                                                         <option value=""> -- Please Select a District First -- </option>
                                                     </select>
                                                 </div>

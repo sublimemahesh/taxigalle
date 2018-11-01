@@ -67,6 +67,20 @@ class Users {
         }
     }
 
+    public function all() {
+
+        $query = "SELECT * FROM `users` ";
+        $db = new Database();
+        $result = $db->readQuery($query);
+        $array_res = array();
+
+        while ($row = mysql_fetch_array($result)) {
+            array_push($array_res, $row);
+        }
+
+        return $array_res;
+    }
+
     public function getVerifiedUsers() {
 
         $query = "SELECT * FROM `users` WHERE `verified` = 1 ";

@@ -4,7 +4,6 @@ include_once(dirname(__FILE__) . './auth.php');
 $id = NULL;
 $id = $_GET['id'];
 $BOOKING = new Booking($id);
-$VEHICLE_TYPE = $BOOKING->vehicle;
 ?>
 
 <!DOCTYPE html>
@@ -99,13 +98,13 @@ $VEHICLE_TYPE = $BOOKING->vehicle;
                             </div>
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                    <label for="vehicle">Vehicle</label>
+                                    <label for="vehicle">Vehicle Type</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <label for="vehicle" class="hidden-lg hidden-md">Vehicle</label>
-                                            <div class="form-control">
+                                            <label for="vehicle" class="hidden-lg hidden-md">Vehicle Type</label>
+                                            <div class="form-control"> 
                                                 <?php
                                                 $VEHICLE = new Vehicle_type($BOOKING->vehicle);
                                                 ?>
@@ -171,70 +170,126 @@ $VEHICLE_TYPE = $BOOKING->vehicle;
                                     </div>
                                 </div>
                             </div>
+                            <?php
+                            if ($BOOKING->is_approved == 1) {
+                                ?>
 
-                            <div class="row">
-                                <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                    <label for="district">District</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label for="district" class="hidden-lg hidden-md">District</label>
-
-                                            <select class="form-control" autocomplete="off" name="district" id="district" required="">
-                                                <option value="<?php $VEHICLE->city ?>"> -- Please Select Your District -- </option>
-                                                <?php foreach (District::all() as $key => $district) {
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                        <label for="district">District</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <label for="district" class="hidden-lg hidden-md">District</label>
+                                                <div class="form-control"><?php
+                                                    $VEHICLE = new Vehicle($BOOKING->booked_vehicle);
+                                                    $CITY = new City($VEHICLE->city);
+                                                    $DISTRICT = new District($CITY->id);
+                                                    echo $DISTRICT->name;
                                                     ?>
-                                                    <option value="<?php echo $district['id'] ?>"> <?php echo $district['name'] ?>                                        
-                                                    </option>
-                                                    <?php
-                                                }
-                                                ?>
-                                            </select>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--City-->
 
-                            </div> 
-                            <div class="row">
-                                <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                    <label for="city-bar">City</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label for="city-bar" class="hidden-lg hidden-md">City</label>
-
-                                            <select class="form-control city-bar " autocomplete="off"  id="city-bar" autocomplete="off" name="city" required="TRUE">
-                                                <option value=""> -- Please Select a District First -- </option>
-                                            </select>
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                        <label for="city">City</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <label for="city" class="hidden-lg hidden-md">City</label>
+                                                <div class="form-control"><?php
+                                                    $VEHICLE = new Vehicle($BOOKING->booked_vehicle);
+                                                    $CITY = new City($VEHICLE->city);
+                                                    echo $CITY->name;
+                                                    ?>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--City-->
-
-                            </div> 
-
-
-                            <div class="row">
-                                <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
-                                    <label for="vehicle">Vehicle</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <label for="vehicle" class="hidden-lg hidden-md">Vehicle</label>
-
-                                            <select class="form-control vehicleType" autocomplete="off"  id="vehicle-bar" autocomplete="off" name="vehicle" required="TRUE">
-                                                <option value=""> -- Please Select a City First -- </option>
-                                            </select>
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                        <label for="vehicle">Vehicle</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <label for="vehicle" class="hidden-lg hidden-md">Vehicle</label>
+                                                <div class="form-control"><?php
+                                                    $VEHICLE = new Vehicle($BOOKING->booked_vehicle);
+                                                    echo $VEHICLE->model_and_brand
+                                                    ?>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!--City-->
 
-                            </div> 
+                            <?php } else { ?>
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                        <label for="district">District</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <label for="district" class="hidden-lg hidden-md">District</label>
+
+                                                <select class="form-control" autocomplete="off"   id="district" required="">
+                                                    <option value="<?php $VEHICLE->city ?>"> -- Please Select Your District -- </option>
+                                                    <?php foreach (District::all() as $key => $district) {
+                                                        ?>
+                                                        <option value="<?php echo $district['id'] ?>"> <?php echo $district['name'] ?>                                        
+                                                        </option>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div> 
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                        <label for="city-bar">City</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <label for="city-bar" class="hidden-lg hidden-md">City</label>
+
+                                                <select class="form-control city-bar " autocomplete="off"  id="city-bar" autocomplete="off" name="city" required="TRUE">
+                                                    <option value=""> -- Please Select a District First -- </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div> 
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
+                                        <label for="booked_vehicle">Vehicle</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <label for="vehicle" class="hidden-lg hidden-md">Vehicle</label>
+
+                                                <select class="form-control vehicleType" autocomplete="off"  id="vehicle-bar" autocomplete="off" name="booked_vehicle" required="TRUE">
+                                                    <option value=""> -- Please Select a City First -- </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+
+                            <?php }
+                            ?>
+
 
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 hidden-sm hidden-xs form-control-label">
@@ -265,8 +320,8 @@ $VEHICLE_TYPE = $BOOKING->vehicle;
                             <div class="row clearfix">     
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5">  
                                 </div> 
-                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-
+                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7"> 
+                                    <input type="hidden" id="id" value="<?php echo $BOOKING->vehicle; ?>" name="vehicle"/>
                                     <input type="hidden" id="id" value="<?php echo $BOOKING->id; ?>" name="id"/>
                                     <button class="btn btn-primary m-t-15 waves-effect  pull-left" type="submit" name="update">Update</button>
                                 </div>

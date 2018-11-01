@@ -203,26 +203,7 @@ include_once(dirname(__FILE__) . './auth.php');
                     </a>
 
                 </li>
-                <li>
-                    <a href="javascript:void(0);" class="menu-toggle">
-                        <i class="material-icons">airport_shuttle</i>
-                        <span>Vehicle</span>
-                    </a>
-                    <ul class="ml-menu">
-                        <li>
-                            <a href="create-vehicle.php">
-                                <i class="material-icons">add</i>
-                                <span>Add New</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="manage-vehicle.php">
-                                <i class="material-icons">list</i>
-                                <span>Manage</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                
                 <li>
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">directions_car    </i>
@@ -245,6 +226,26 @@ include_once(dirname(__FILE__) . './auth.php');
                             <a href="arrange-vehicle-type.php">
                                 <i class="material-icons">compare_arrows</i>
                                 <span>Arrange</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle">
+                        <i class="material-icons">airport_shuttle</i>
+                        <span>Vehicle</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li>
+                            <a href="create-vehicle.php">
+                                <i class="material-icons">add</i>
+                                <span>Add New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="manage-vehicle.php">
+                                <i class="material-icons">list</i>
+                                <span>Manage</span>
                             </a>
                         </li>
                     </ul>
