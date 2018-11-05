@@ -103,7 +103,7 @@ $BOOKING = new Booking($id);
                                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 p-bottom">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <label for="vehicle" class="hidden-lg hidden-md">Vehicle Type</label>
+                                            <label for="vehicle" class="hidden-lg hidden-md">Vehicle Typewwwww</label>
                                             <div class="form-control"> 
                                                 <?php
                                                 $VEHICLE = new Vehicle_type($BOOKING->vehicle);

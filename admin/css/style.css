@@ -8111,6 +8111,16 @@ html.ie11 .bs-searchbox .form-control {
     border: 0;
 }
 
+
+.blue-btn   {
+    padding: 5px 8px;
+    color: #fff;
+    background-color: blue;
+    border-radius: 3px;
+    border: 0;
+}
+
+
 .arrange-container{
     margin-left: -18px;
 }
