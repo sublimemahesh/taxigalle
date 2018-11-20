@@ -2,7 +2,7 @@
 
 include_once(dirname(__FILE__) . '/../class/include.php');
 
-$USER = new User(NULL);
+$USER = new Admin(NULL);
 
 if ($USER->logOut()) {
     header('Location: ../login.php');
